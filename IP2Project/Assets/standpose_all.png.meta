@@ -1,8 +1,15 @@
 fileFormatVersion: 2
-guid: a5413706725245447ba3c597c34ea6eb
+guid: 5b960e05712cbf641b9b2317abeee265
 TextureImporter:
   fileIDToRecycleName:
     21300000: standpose_all_0
+    21300002: standpose_all_1
+    21300004: standpose_all_2
+    21300006: standpose_all_3
+    21300008: standpose_all_4
+    21300010: standpose_all_5
+    21300012: standpose_all_6
+    21300014: standpose_all_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -47,10 +54,80 @@ TextureImporter:
     - name: standpose_all_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 90
-        height: 250
+        x: 9
+        y: 190
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: standpose_all_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 190
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: standpose_all_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 130
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: standpose_all_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 130
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: standpose_all_4
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 69
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: standpose_all_5
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 69
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: standpose_all_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 8
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: standpose_all_7
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 8
+        width: 35
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

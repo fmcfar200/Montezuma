@@ -13,6 +13,10 @@ public class PlayerAttackScript : MonoBehaviour {
 
 	private bool isDictator = false;
 	public GameObject fireballPrefab;
+	public Transform fireballSpawn;
+
+	public Sprite dictatorSprite;
+	public Sprite normalSprite;
 
 	PlayerMovementScript playerMovement;
 
@@ -55,11 +59,34 @@ public class PlayerAttackScript : MonoBehaviour {
 			isDictator = false;
 		}
 
-		if (isDictator)
-		{
-			if(Input.GetButtonDown(specialString))
+		if (isDictator) {
+			this.gameObject.GetComponent<SpriteRenderer> ().sprite = dictatorSprite;
+			this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
+
+			if (Input.GetButtonDown (specialString)) {
+				Instantiate (fireballPrefab, fireballSpawn.transform.position, Quaternion.identity);
+			}
+		} else {
+			this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSprite;
+			if (this.gameObject.name == "Player1")
 			{
-				Instantiate(fireballPrefab,this.transform.position,Quaternion.identity);
+				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,0,1);
+
+			}
+			else if (this.gameObject.name == "Player2")
+			{
+				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1,0,0,1);
+
+			}
+			else if (this.gameObject.name == "Player3")
+			{
+				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,1,0,1);
+
+			}
+			else
+			{
+				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,1,1);
+
 			}
 		}
 
@@ -69,7 +96,8 @@ public class PlayerAttackScript : MonoBehaviour {
 	{
 
 		if (coll.gameObject.tag == "Player") {
-			coll.GetComponent<PlayerRespawnScript>().RespawnPlayer();
+			StartCoroutine(coll.gameObject.GetComponent<PlayerHealthScript>().WaitAndRespawnPlayer());
+
 		}
 	}
 }
