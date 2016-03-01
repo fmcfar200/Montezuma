@@ -10,7 +10,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	public float dblJumpForce;	//force of the second jump
 
 	private bool grounded = false;		//variable for when the player is grounded
-	//public bool onTopPlat = false;
+	public bool onTopPlat = false;
 	private bool Jump = false;			//variable for when the player is jumping
 	private Transform groundCheck;		//holds transform object for checking if the player is on the ground
 	private bool onLadder = false;
@@ -53,8 +53,8 @@ public class PlayerMovementScript : MonoBehaviour {
 		//sets grounded to true ifthe line cast hits an object with layer name ground.
 		grounded = Physics2D.Linecast(transform.position,groundCheck.position,
 		                              1 << LayerMask.NameToLayer("Ground"));
-		//onTopPlat = Physics2D.Linecast(transform.position,groundCheck.position,
-		                              // 1 << LayerMask.NameToLayer("Top Platform"));
+		onTopPlat = Physics2D.Linecast(transform.position,groundCheck.position,
+		                              1 << LayerMask.NameToLayer("Top Platform"));
 
 		//Moving the players horizontally.
 		moveHor = Input.GetAxis(horizontalString);

@@ -27,14 +27,18 @@ public class PlayerHealthScript : MonoBehaviour {
 
 	public IEnumerator WaitAndRespawnPlayer()
 	{
-		this.transform.position = playerSpawn.position;
 		player.GetComponent<PlayerMovementScript> ().enabled = false;
 		player.GetComponent<PlayerAttackScript> ().enabled = false;
 		player.GetComponent<BoxCollider2D> ().enabled = false;
 		player.GetComponent<Rigidbody2D> ().isKinematic = true;
 		player.GetComponent<SpriteRenderer> ().color = new Color(1.0f,1.0f,1.0f,tempAlphaVal);
-		topPlatform.GetComponent<TopPlatformScript> ().numOnTop -= 1;
+		if (player.GetComponent<PlayerMovementScript> ().onTopPlat == true) {
+			topPlatform.GetComponent<TopPlatformScript> ().numOnTop -= 1;
+		}
+
 		player.GetComponent<PlayerAttackScript> ().isDictator = false;
+		this.transform.position = playerSpawn.position;
+
 
 		yield return new WaitForSeconds (respawnTimer);
 		player.GetComponent<PlayerMovementScript> ().enabled = true;
