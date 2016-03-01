@@ -46,13 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\EndGameScript.cs" />
-     <Compile Include="Assets\Scripts\FireballScript.cs" />
-     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerAttackScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerHealthScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovementScript.cs" />
-     <Compile Include="Assets\Scripts\TimeLeftScript.cs" />
+     <Compile Include="Assets\Assets\Scripts\EndGameScript.cs" />
+     <Compile Include="Assets\Assets\Scripts\FireballScript.cs" />
+     <Compile Include="Assets\Assets\Scripts\MainMenuScript.cs" />
+     <Compile Include="Assets\Assets\Scripts\PlayerAttackScript.cs" />
+     <Compile Include="Assets\Assets\Scripts\PlayerHealthScript.cs" />
+     <Compile Include="Assets\Assets\Scripts\PlayerMovementScript.cs" />
+     <Compile Include="Assets\Assets\Scripts\TimeLeftScript.cs" />
+     <Compile Include="Assets\Assets\TopPlatformScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.8/Standalone/UnityEngine.UI.dll</HintPath>
  </Reference>

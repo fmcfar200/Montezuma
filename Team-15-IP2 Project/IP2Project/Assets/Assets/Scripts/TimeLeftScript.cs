@@ -5,7 +5,7 @@ using System.Collections;
 public class TimeLeftScript : MonoBehaviour {
 	
 	public Text scoreText;
-	float timeLeft = 60.0f;
+	public float timeLeft = 60.0f;
 	
 	// Use this for initialization
 	void Start () {

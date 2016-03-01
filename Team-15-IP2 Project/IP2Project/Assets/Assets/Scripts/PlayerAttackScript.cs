@@ -12,7 +12,8 @@ public class PlayerAttackScript : MonoBehaviour {
 	private float attackTimer = 0;
 	private float attackDelay = 0.5f;
 
-	private bool isDictator = false;
+	public bool isDictator = false;
+
 	public GameObject fireballPrefab;
 	public Transform fireballSpawn;
 
@@ -23,16 +24,19 @@ public class PlayerAttackScript : MonoBehaviour {
 	int playerNumber = 0;
 	float playerScore = 0;
 
-	PlayerMovementScript playerMovement;
+
+	Animator animator;
 
 
 	// Use this for initialization
 	void Start () 
 	{
+		//initialisation
+
+		animator = GetComponent<Animator> ();
+
 		attackTrigger.enabled = false;
-		playerMovement = GetComponent<PlayerMovementScript> ();
-
-
+	
 		if (this.gameObject.name == "Player1") {
 			playerNumber = 1;
 		} else if (this.gameObject.name == "Player2") {
@@ -68,14 +72,13 @@ public class PlayerAttackScript : MonoBehaviour {
 				attackTrigger.enabled = false;
 			}
 		}
-		//code for special attack on top platform
-		if (playerMovement.onTopPlat == true) {
-			isDictator = true;
-		} else {
-			isDictator = false;
-		}
 
+		// isDictator is set when the top platform script detects one person colliding with it.
 		if (isDictator) {
+
+			//TEMP START
+			animator.enabled = false;
+			//TEMP END
 			this.gameObject.GetComponent<SpriteRenderer> ().sprite = dictatorSprite;
 			this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
 
@@ -87,28 +90,21 @@ public class PlayerAttackScript : MonoBehaviour {
 			}
 		} else {
 			this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSprite;
-			if (this.gameObject.name == "Player1")
-			{
-				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,0,1);
-
-			}
-			else if (this.gameObject.name == "Player2")
-			{
-				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1,0,0,1);
-
-			}
-			else if (this.gameObject.name == "Player3")
+			animator.enabled = true;
+			if (this.gameObject.name == "Player3")
 			{
 				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,1,0,1);
 
 			}
-			else
+			else if (this.gameObject.name == "Player4")
 			{
 				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,1,1);
 
 			}
 		}
 
+
+		//sets the score text.
 		playerScoreText.text = "Player " + playerNumber + " Score : " + playerScore;
 
 	}

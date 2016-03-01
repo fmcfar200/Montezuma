@@ -10,9 +10,14 @@ public class PlayerHealthScript : MonoBehaviour {
 	public float respawnTimer = 5.0f;
 
 	GameObject player;
+	GameObject topPlatform;
 	// Use this for initialization
 	void Start () {
 		player = this.gameObject;
+		topPlatform = GameObject.Find("King_Platform");
+		if (topPlatform == null) {
+			Debug.LogError("NO TOP PLATFORM FOUND!!");
+		}
 	}
 	
 	// Update is called once per frame
@@ -28,6 +33,8 @@ public class PlayerHealthScript : MonoBehaviour {
 		player.GetComponent<BoxCollider2D> ().enabled = false;
 		player.GetComponent<Rigidbody2D> ().isKinematic = true;
 		player.GetComponent<SpriteRenderer> ().color = new Color(1.0f,1.0f,1.0f,tempAlphaVal);
+		topPlatform.GetComponent<TopPlatformScript> ().numOnTop -= 1;
+		player.GetComponent<PlayerAttackScript> ().isDictator = false;
 
 		yield return new WaitForSeconds (respawnTimer);
 		player.GetComponent<PlayerMovementScript> ().enabled = true;

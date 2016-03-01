@@ -10,7 +10,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	public float dblJumpForce;	//force of the second jump
 
 	private bool grounded = false;		//variable for when the player is grounded
-	public bool onTopPlat = false;
+	//public bool onTopPlat = false;
 	private bool Jump = false;			//variable for when the player is jumping
 	private Transform groundCheck;		//holds transform object for checking if the player is on the ground
 	private bool onLadder = false;
@@ -20,27 +20,28 @@ public class PlayerMovementScript : MonoBehaviour {
 	public string jumpString = "Jump_P1";
 	public string verticalString = "Vertical_P1";
 
+	private Animator animator;
 	// Use this for initialization
 	void Start () {
+		animator = GetComponent<Animator> ();
+		playerRb = GetComponent<Rigidbody2D> ();
 
 		groundCheck = transform.Find("Ground_Check");
 		if (groundCheck == null) {
 			Debug.LogError("GROUND CHECK NOT FOUND");
 		}
-		playerRb = GetComponent<Rigidbody2D> ();
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-
-
-
 		//logs if the player is on the ground
 		if (grounded == true) 
 		{
 			Debug.Log(this.gameObject.name + ": On the ground");
 		}
+
 		//sets the jump variable to true if the jump button is pressed and the player is on the ground.
 		if (Input.GetButtonDown (jumpString) && (grounded)) 
 		{
@@ -52,17 +53,23 @@ public class PlayerMovementScript : MonoBehaviour {
 		//sets grounded to true ifthe line cast hits an object with layer name ground.
 		grounded = Physics2D.Linecast(transform.position,groundCheck.position,
 		                              1 << LayerMask.NameToLayer("Ground"));
-		onTopPlat = Physics2D.Linecast(transform.position,groundCheck.position,
-		                               1 << LayerMask.NameToLayer("Top Platform"));
+		//onTopPlat = Physics2D.Linecast(transform.position,groundCheck.position,
+		                              // 1 << LayerMask.NameToLayer("Top Platform"));
 
 		//Moving the players horizontally.
 		moveHor = Input.GetAxis(horizontalString);
 
 		if (moveHor < 0) {
 			this.transform.localScale = new Vector3 (-1, 1, 1);
+			animator.SetBool("Moving", true	);
 
-		} else {
-			this.transform.localScale = new Vector3 (1, 1,1	);
+		} else if (moveHor == 0) {
+			animator.SetBool("Moving",false);
+		}
+
+		else {
+			this.transform.localScale = new Vector3 (1, 1,1);
+			animator.SetBool("Moving", true	);
 
 		}
 		playerRb.velocity = new Vector2 (moveHor * playerSpeed, playerRb.velocity.y);
