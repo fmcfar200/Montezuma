@@ -91,16 +91,16 @@ public class PlayerAttackScript : MonoBehaviour {
 		} else {
 			this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSprite;
 			animator.enabled = true;
-			if (this.gameObject.name == "Player3")
-			{
-				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,1,0,1);
-
-			}
-			else if (this.gameObject.name == "Player4")
-			{
-				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,1,1);
-
-			}
+//			if (this.gameObject.name == "Player3")
+//			{
+//				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,1,0,1);
+//
+//			}
+//			else if (this.gameObject.name == "Player4")
+//			{
+//				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,1,1);
+//
+//			}
 		}
 
 

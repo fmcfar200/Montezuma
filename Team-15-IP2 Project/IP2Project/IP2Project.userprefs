@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerHealthScript.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerAttackScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerHealthScript.cs" Line="38" Column="3" />
-      <File FileName="Assets\Scripts\PlayerAttackScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerMovementScript.cs" Line="38" Column="3" />
+      <File FileName="Assets\Scripts\MainMenuScript.cs" Line="20" Column="4" />
+      <File FileName="Assets\Scripts\EndGameScript.cs" Line="29" Column="1" />
+      <File FileName="Assets\Scripts\PlayerAttackScript.cs" Line="102" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
