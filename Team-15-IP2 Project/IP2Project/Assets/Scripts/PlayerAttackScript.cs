@@ -21,8 +21,8 @@ public class PlayerAttackScript : MonoBehaviour {
 	public Sprite normalSprite;
 
 	public Text playerScoreText;
-	int playerNumber = 0;
-	float playerScore = 0;
+	public int playerNumber = 0;
+	public float playerScore = 0;
 
 
 	Animator animator;
