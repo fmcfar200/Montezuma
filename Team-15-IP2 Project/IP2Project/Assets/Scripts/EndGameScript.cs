@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class EndGameScript : MonoBehaviour {
-
+	
 
 	// Use this for initialization
 	void Start () {
@@ -11,10 +12,12 @@ public class EndGameScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
 	
-		if (Input.GetButtonDown ("Jump_P1") || Input.GetButtonDown ("Jump_P2")||Input.GetButtonDown ("Jump_P3")||Input.GetButtonDown ("Jump_P4")) {
-			LoadMainLevel();
-		}
+		//if (Input.GetButtonDown ("Jump_P1") || Input.GetButtonDown ("Jump_P2")||Input.GetButtonDown ("Jump_P3")||Input.GetButtonDown ("Jump_P4")) {
+		//	LoadMainLevel();
+		//}
 	}
 
 	public void LoadMainLevel()

@@ -20,11 +20,6 @@ public class PlayerAttackScript : MonoBehaviour {
 	public Sprite dictatorSprite;
 	public Sprite normalSprite;
 
-	public Text playerScoreText;
-	public int playerNumber = 0;
-	public float playerScore = 0;
-
-
 	Animator animator;
 
 
@@ -36,16 +31,6 @@ public class PlayerAttackScript : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 
 		attackTrigger.enabled = false;
-	
-		if (this.gameObject.name == "Player1") {
-			playerNumber = 1;
-		} else if (this.gameObject.name == "Player2") {
-			playerNumber = 2;
-		} else if (this.gameObject.name == "Player3") {
-			playerNumber = 3;
-		} else if (this.gameObject.name == "Player4") {
-			playerNumber = 4;
-		}
 
 	}
 	
@@ -82,8 +67,6 @@ public class PlayerAttackScript : MonoBehaviour {
 			this.gameObject.GetComponent<SpriteRenderer> ().sprite = dictatorSprite;
 			this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
 
-			playerScore += Time.deltaTime;
-
 
 			if (Input.GetButtonDown (specialString)) {
 				Instantiate (fireballPrefab, fireballSpawn.transform.position, Quaternion.identity);
@@ -103,9 +86,6 @@ public class PlayerAttackScript : MonoBehaviour {
 //			}
 		}
 
-
-		//sets the score text.
-		playerScoreText.text = "Player " + playerNumber + " Score : " + playerScore;
 
 	}
 	
