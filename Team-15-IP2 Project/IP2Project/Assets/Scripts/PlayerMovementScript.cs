@@ -39,7 +39,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		//logs if the player is on the ground
 		if (grounded == true) 
 		{
-			Debug.Log(this.gameObject.name + ": On the ground");
+			//Debug.Log(this.gameObject.name + ": On the ground");
 		}
 
 		//sets the jump variable to true if the jump button is pressed and the player is on the ground.
@@ -77,7 +77,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		//jumping
 		if (Jump) 
 		{
-			Debug.Log(this.gameObject.name +" Jumped");
+			//Debug.Log(this.gameObject.name +" Jumped");
 			playerRb.AddForce(new Vector2(playerRb.velocity.x,jumpForce));
 			Jump = false;
 		}

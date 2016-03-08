@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: f069ba9c8c09d8942966d50dc3aee67e
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 4 - 1tTVKER_0
+    21300002: 4 - 1tTVKER_1
+    21300004: 4 - 1tTVKER_2
+    21300006: 4 - 1tTVKER_3
+    21300008: 4 - 1tTVKER_4
+    21300010: 4 - 1tTVKER_5
+    21300012: 4 - 1tTVKER_6
+    21300014: 4 - 1tTVKER_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: 4 - 1tTVKER_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 7
+        width: 30
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 4 - 1tTVKER_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 7
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 4 - 1tTVKER_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 6
+        width: 30
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 4 - 1tTVKER_3
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 6
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 4 - 1tTVKER_4
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 6
+        width: 35
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 4 - 1tTVKER_5
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 6
+        width: 34
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 4 - 1tTVKER_6
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 2
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 4 - 1tTVKER_7
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 2
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

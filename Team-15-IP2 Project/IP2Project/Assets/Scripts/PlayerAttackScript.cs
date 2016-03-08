@@ -7,6 +7,7 @@ public class PlayerAttackScript : MonoBehaviour {
 	public BoxCollider2D attackTrigger;
 	public string attackString = "Attack_P1";
 	public string specialString = "Special_P1";
+	public string powerString = "Power_P1";
 	private bool attacking = false;
 
 	private float attackTimer = 0;
@@ -16,9 +17,14 @@ public class PlayerAttackScript : MonoBehaviour {
 
 	public GameObject fireballPrefab;
 	public Transform fireballSpawn;
+	private bool usingSpecial = false;
+	private float specialTimer = 0;
+	private float specialDelay = 0.5f;
 
 	public Sprite dictatorSprite;
 	public Sprite normalSprite;
+
+	public bool powerReady = false;
 
 	Animator animator;
 
@@ -68,25 +74,45 @@ public class PlayerAttackScript : MonoBehaviour {
 			this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
 
 
-			if (Input.GetButtonDown (specialString)) {
-				Instantiate (fireballPrefab, fireballSpawn.transform.position, Quaternion.identity);
+			if (Input.GetButtonDown (specialString) && !usingSpecial) 
+			{
+				usingSpecial = true;
+				specialTimer = specialDelay;
+				Instantiate(fireballPrefab,fireballSpawn.transform.position,Quaternion.identity);
 			}
-		} else {
+
+			if (usingSpecial)
+			{
+				if(specialTimer > 0)
+				{
+					specialTimer -= Time.deltaTime;
+				}
+				else
+				{
+					usingSpecial = false;
+				}
+			}
+		} 
+		else 
+		{
 			this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSprite;
 			animator.enabled = true;
-//			if (this.gameObject.name == "Player3")
-//			{
-//				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,1,0,1);
-//
-//			}
-//			else if (this.gameObject.name == "Player4")
-//			{
-//				this.gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,1,1);
-//
-//			}
+		}
+
+		if (powerReady) 
+		{
+			if (Input.GetButtonDown(powerString))
+			{
+				//do the power
+			}
 		}
 
 
+	}
+
+	void WindPower()
+	{
+		//power code// may be coroutine...
 	}
 	
 	void OnTriggerStay2D(Collider2D coll)
