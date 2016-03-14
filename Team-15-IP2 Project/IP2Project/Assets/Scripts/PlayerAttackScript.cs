@@ -25,6 +25,7 @@ public class PlayerAttackScript : MonoBehaviour {
 	public Sprite normalSprite;
 
 	public bool powerReady = false;
+	public Transform powerSpawn;
 
 	Animator animator;
 
@@ -104,16 +105,40 @@ public class PlayerAttackScript : MonoBehaviour {
 			if (Input.GetButtonDown(powerString))
 			{
 				//do the power
+				powerReady = false;
+				StartCoroutine(WindPower());
 			}
 		}
 
 
 	}
 
-	void WindPower()
+	IEnumerator WindPower()
 	{
+		Debug.Log("Power used");
 		//power code// may be coroutine...
+		RaycastHit2D hit = Physics2D.Raycast (powerSpawn.transform.position ,(this.transform.localScale.x)*Vector2.right);
+		if (hit.collider != null) {
+			Debug.Log("Hit "+hit.collider.gameObject.name.ToString());
+			if (hit.collider.gameObject.tag == "Player" && hit.collider.gameObject.name != this.gameObject.name) 
+			{
+				Rigidbody2D hitRb2D = hit.collider.gameObject.GetComponent<Rigidbody2D> ();
+				PlayerMovementScript hitMovement = hit.collider.gameObject.GetComponent<PlayerMovementScript>();
+				hitMovement.enabled = false;
+				hitRb2D.isKinematic = true;
+				hitRb2D.velocity = new Vector2((this.transform.localScale.x)*25f,0);
+				yield return new WaitForSeconds (2.0f);
+				hitMovement.enabled = true;
+				hitRb2D.isKinematic = false;
+
+				hitRb2D.velocity = new Vector2(0,0);
+			}
+		} else {
+			Debug.Log("NO HIT");
+		}
+
 	}
+
 	
 	void OnTriggerStay2D(Collider2D coll)
 	{

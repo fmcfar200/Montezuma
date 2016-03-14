@@ -47,6 +47,12 @@ public class PlayerMovementScript : MonoBehaviour {
 		{
 			Jump = true;
 		}
+
+		if (transform.position.x > 1.0f || transform.position.x < -50.0f || transform.position.y > 0.0f
+			|| transform.position.y < -20.0f) {
+			PlayerHealthScript playerHealth = this.gameObject.GetComponent<PlayerHealthScript>();
+			StartCoroutine(playerHealth.WaitAndRespawnPlayer());
+		}
 	}
 	void FixedUpdate()
 	{
