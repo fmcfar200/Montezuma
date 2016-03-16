@@ -24,7 +24,12 @@ public class PlayerAttackScript : MonoBehaviour {
 	public Sprite dictatorSprite;
 	public Sprite normalSprite;
 
-	public bool powerReady = false;
+	public bool windPowerReady = false;
+	public bool freezePowerReady = false;
+	public bool shieldPowerReady = false;
+	public bool speedPowerReady = false;
+	public GameObject freezeObj;
+
 	public Transform powerSpawn;
 
 	Animator animator;
@@ -100,23 +105,32 @@ public class PlayerAttackScript : MonoBehaviour {
 			animator.enabled = true;
 		}
 
-		if (powerReady) 
+		if (windPowerReady) 
 		{
-			if (Input.GetButtonDown(powerString))
+			if (Input.GetButtonDown (powerString)) 
 			{
 				//do the power
-				powerReady = false;
-				StartCoroutine(WindPower());
+				windPowerReady = false;
+				StartCoroutine (WindPower ());
+			}
+		} 
+		else if (freezePowerReady)
+		{
+			if (Input.GetButtonDown (powerString)) 
+			{
+				//do the power
+				windPowerReady = false;
+				StartCoroutine (FreezePower());
 			}
 		}
-
+		//other code
 
 	}
 
 	IEnumerator WindPower()
 	{
 		Debug.Log("Power used");
-		//power code// may be coroutine...
+	
 		RaycastHit2D hit = Physics2D.Raycast (powerSpawn.transform.position ,(this.transform.localScale.x)*Vector2.right);
 		if (hit.collider != null) {
 			Debug.Log("Hit "+hit.collider.gameObject.name.ToString());
@@ -137,6 +151,27 @@ public class PlayerAttackScript : MonoBehaviour {
 			Debug.Log("NO HIT");
 		}
 
+	}
+	IEnumerator FreezePower()
+	{
+		RaycastHit2D hit = Physics2D.Raycast (powerSpawn.transform.position ,(this.transform.localScale.x)*Vector2.right);
+		if (hit.collider != null) {
+			Debug.Log("Hit "+hit.collider.gameObject.name.ToString());
+			if (hit.collider.gameObject.tag == "Player" && hit.collider.gameObject.name != this.gameObject.name) 
+			{
+				Rigidbody2D hitRb2D = hit.collider.gameObject.GetComponent<Rigidbody2D> ();
+				PlayerMovementScript hitMovement = hit.collider.gameObject.GetComponent<PlayerMovementScript>();
+				PlayerAttackScript hitAttack = hit.collider.gameObject.GetComponent<PlayerAttackScript>();
+				hitAttack.freezeObj.SetActive(true);
+				hitRb2D.velocity = new Vector2(0,0);
+				hitMovement.enabled = false;
+				yield return new WaitForSeconds (5.0f);
+				hitMovement.enabled = true;
+				hitAttack.freezeObj.SetActive(false);
+			}
+		} else {
+			Debug.Log("NO HIT");
+		}
 	}
 
 	
