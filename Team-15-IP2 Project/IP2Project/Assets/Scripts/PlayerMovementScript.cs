@@ -4,7 +4,9 @@ using System.Collections;
 public class PlayerMovementScript : MonoBehaviour {
 
 	Rigidbody2D playerRb;		//players rigid body
-	float playerSpeed = 2.0f;	//speed of the player
+	public float playerSpeed;	//speed of the player
+	public float normalPlayerSpeed = 2.0f;
+	public float speedBoostSpeed = 4.0f;
 	float moveHor;				//holds the float variable for player movement
 	public float jumpForce;		//force of the basic jump
 	public float dblJumpForce;	//force of the second jump
@@ -30,6 +32,8 @@ public class PlayerMovementScript : MonoBehaviour {
 		if (groundCheck == null) {
 			Debug.LogError("GROUND CHECK NOT FOUND");
 		}
+
+		playerSpeed = normalPlayerSpeed;
 
 	}
 	

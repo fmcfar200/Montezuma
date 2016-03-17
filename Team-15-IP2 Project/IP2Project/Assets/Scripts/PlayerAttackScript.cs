@@ -29,6 +29,8 @@ public class PlayerAttackScript : MonoBehaviour {
 	public bool shieldPowerReady = false;
 	public bool speedPowerReady = false;
 	public GameObject freezeObj;
+	public GameObject runObj;
+	public GameObject shieldObj;
 
 	public Transform powerSpawn;
 
@@ -105,25 +107,31 @@ public class PlayerAttackScript : MonoBehaviour {
 			animator.enabled = true;
 		}
 
-		if (windPowerReady) 
-		{
-			if (Input.GetButtonDown (powerString)) 
-			{
+		if (windPowerReady) {
+			if (Input.GetButtonDown (powerString)) {
 				//do the power
 				windPowerReady = false;
 				StartCoroutine (WindPower ());
 			}
-		} 
-		else if (freezePowerReady)
-		{
-			if (Input.GetButtonDown (powerString)) 
-			{
+		} else if (freezePowerReady) {
+			if (Input.GetButtonDown (powerString)) {
 				//do the power
-				windPowerReady = false;
-				StartCoroutine (FreezePower());
+				freezePowerReady = false;
+				StartCoroutine (FreezePower ());
+			}
+		} else if (speedPowerReady) {
+			if (Input.GetButtonDown (powerString)) {
+				//do the power
+				speedPowerReady = false;
+				StartCoroutine (SpeedBoost ());
+			}
+		} else if (shieldPowerReady) {
+			if (Input.GetButtonDown (powerString)) {
+				//do the power
+				shieldPowerReady = false;
+				StartCoroutine (ShieldPower());
 			}
 		}
-		//other code
 
 	}
 
@@ -172,6 +180,27 @@ public class PlayerAttackScript : MonoBehaviour {
 		} else {
 			Debug.Log("NO HIT");
 		}
+	}
+
+	IEnumerator SpeedBoost()
+	{
+		PlayerMovementScript playerMovement = this.gameObject.GetComponent<PlayerMovementScript> ();
+		runObj.SetActive (true);
+		playerMovement.playerSpeed = playerMovement.speedBoostSpeed;
+		yield return new WaitForSeconds (5.0f);
+		runObj.SetActive (false);
+		playerMovement.playerSpeed = playerMovement.normalPlayerSpeed;
+
+	}
+
+	IEnumerator ShieldPower()
+	{
+		PlayerHealthScript playerHealth = this.gameObject.GetComponent<PlayerHealthScript> ();
+		shieldObj.SetActive (true);
+		playerHealth.enabled = false;
+		yield return new WaitForSeconds (5.0f);
+		shieldObj.SetActive (false);
+		playerHealth.enabled = true;
 	}
 
 	

@@ -4,7 +4,6 @@ using System.Collections;
 public class PickupScript : MonoBehaviour {
 
 	PlayerAttackScript playerAttack;
-	string[] powerTypes = {"Freeze","Wind","Speed","Shield"};
 	public string thisPower;
 
 	void Start()
