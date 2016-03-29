@@ -4,11 +4,19 @@ using System.Collections;
 public class PickupScript : MonoBehaviour {
 
 	PlayerAttackScript playerAttack;
+	PickupSpawnScript pickupSpawnScript;
+	GameObject gameManager;
+
 	public string thisPower;
 
 	void Start()
 	{
-
+		gameManager = GameObject.Find("GameManager");
+		if (gameManager != null) {
+			pickupSpawnScript = gameManager.GetComponent<PickupSpawnScript> ();
+		} else {
+			Debug.LogError("GAME MANAGER NOT FOUND");
+		}
 	}
 	void OnTriggerEnter2D(Collider2D coll)
 	{

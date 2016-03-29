@@ -22,7 +22,7 @@ public class EndGameScript : MonoBehaviour {
 
 	public void LoadMainLevel()
 	{
-		Application.LoadLevel ("Scene");
+		Application.LoadLevel ("Level_1");
 	}
 	
 	public void QuitGame()
