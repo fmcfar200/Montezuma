@@ -4,19 +4,13 @@ using System.Collections;
 public class PickupScript : MonoBehaviour {
 
 	PlayerAttackScript playerAttack;
-	PickupSpawnScript pickupSpawnScript;
-	GameObject gameManager;
+	AudioSource playerAudioSource;
 
 	public string thisPower;
 
 	void Start()
 	{
-		gameManager = GameObject.Find("GameManager");
-		if (gameManager != null) {
-			pickupSpawnScript = gameManager.GetComponent<PickupSpawnScript> ();
-		} else {
-			Debug.LogError("GAME MANAGER NOT FOUND");
-		}
+	
 	}
 	void OnTriggerEnter2D(Collider2D coll)
 	{
@@ -24,6 +18,8 @@ public class PickupScript : MonoBehaviour {
 		{
 			Destroy(this.gameObject);
 			playerAttack = coll.GetComponent<PlayerAttackScript>();
+			playerAudioSource = coll.GetComponent<AudioSource>();
+			playerAudioSource.PlayOneShot(playerAttack.pickUpSound);
 			if (thisPower == "Freeze")
 			{
 				playerAttack.freezePowerReady = true;

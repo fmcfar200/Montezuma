@@ -23,8 +23,13 @@ public class PlayerMovementScript : MonoBehaviour {
 	public string verticalString = "Vertical_P1";
 
 	private Animator animator;
+
+	AudioSource audioSource;
+	public AudioClip jumpSound;
+
 	// Use this for initialization
 	void Start () {
+		audioSource = GetComponent<AudioSource> ();
 		animator = GetComponent<Animator> ();
 		playerRb = GetComponent<Rigidbody2D> ();
 
@@ -90,6 +95,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		if (Jump== true) 
 		{
 			//Debug.Log(this.gameObject.name +" Jumped");
+			PlayJumpSound();
 			playerRb.AddForce(new Vector2(playerRb.velocity.x,jumpForce));
 			Jump = false;
 		}
@@ -108,6 +114,10 @@ public class PlayerMovementScript : MonoBehaviour {
 			}
 
 		}
+	}
+	void PlayJumpSound()
+	{
+		audioSource.PlayOneShot (jumpSound);
 	}
 
 	void OnTriggerEnter2D(Collider2D coll)

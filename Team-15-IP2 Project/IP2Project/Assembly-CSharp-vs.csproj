@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PlayerMenuScript.cs" />
      <Compile Include="Assets\Scripts\EndGameScript.cs" />
      <Compile Include="Assets\Scripts\FireballScript.cs" />
      <Compile Include="Assets\Scripts\LevelSelectSceneScript.cs" />
@@ -60,6 +59,7 @@
      <Compile Include="Assets\Scripts\Player4ScoreScript.cs" />
      <Compile Include="Assets\Scripts\PlayerAttackScript.cs" />
      <Compile Include="Assets\Scripts\PlayerHealthScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerMenuScript.cs" />
      <Compile Include="Assets\Scripts\PlayerMovementScript.cs" />
      <Compile Include="Assets\Scripts\TimeLeftScript.cs" />
      <Compile Include="Assets\Scripts\TopPlatformScript.cs" />

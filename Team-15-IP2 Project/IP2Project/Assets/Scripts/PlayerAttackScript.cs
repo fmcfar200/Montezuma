@@ -36,6 +36,9 @@ public class PlayerAttackScript : MonoBehaviour {
 
 	Animator animator;
 
+	public AudioClip pickUpSound;
+
+
 
 	// Use this for initialization
 	void Start () 
