@@ -18,13 +18,13 @@ public class LevelSelectSceneScript : MonoBehaviour {
 		Application.LoadLevel ("Level_1");
 	}
 
-	/*public void LoadLevelTwo()
+	public void LoadLevelTwo()
 	{
-		Application.LoadLevel ("LevelTwoScene");
+		Application.LoadLevel ("Level_2");
 	}
 
 	public void LoadLevelThree()
 	{
-		Application.LoadLevel ("LevelThreeScene");
-	}*/
+		Application.LoadLevel ("Level_3");
+	}
 }

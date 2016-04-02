@@ -34,6 +34,8 @@ public class PlayerMovementScript : MonoBehaviour {
 		}
 
 		playerSpeed = normalPlayerSpeed;
+		animator.SetBool("Climbing", false);
+
 
 	}
 	
@@ -85,17 +87,25 @@ public class PlayerMovementScript : MonoBehaviour {
 		playerRb.velocity = new Vector2 (moveHor * playerSpeed, playerRb.velocity.y);
 
 		//jumping
-		if (Jump) 
+		if (Jump== true) 
 		{
 			//Debug.Log(this.gameObject.name +" Jumped");
 			playerRb.AddForce(new Vector2(playerRb.velocity.x,jumpForce));
 			Jump = false;
 		}
-		if (onLadder) {
+		if (onLadder == true) {
 
 			moveHor = 0;
 			float moveVer = Input.GetAxis(verticalString);
 			playerRb.velocity = new Vector2(playerRb.velocity.x,moveVer*playerSpeed);
+			if (moveVer == 1 || moveVer == -1)
+			{
+				animator.SetBool("Climbing",true);
+			}
+			else
+			{
+				animator.SetBool("Climbing", false);
+			}
 
 		}
 	}
@@ -110,6 +120,8 @@ public class PlayerMovementScript : MonoBehaviour {
 	{
 		if (coll.gameObject.tag == "Ladder") {
 			onLadder = false;
+			animator.SetBool("Climbing", false);
+
 		}
 	}
 }

@@ -1,11 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerHealthScript.cs">
+  <MonoDevelop.Ide.Workspace />
     <Files>
-      <File FileName="Assets\Scripts\PlayerHealthScript.cs" Line="19" Column="1" />
-      <File FileName="..\..\..\..\..\..\..\Desktop\Menu system\Team-15-IP2 Project\IP2Project\Assets\Scripts\PlayerMenuScript.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\..\..\..\..\Desktop\Menu system\Team-15-IP2 Project\IP2Project\Assets\Scripts\MainMenuScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PickupSpawnScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
