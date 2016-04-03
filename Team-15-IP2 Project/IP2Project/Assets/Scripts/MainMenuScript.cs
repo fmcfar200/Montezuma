@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class MainMenuScript : MonoBehaviour {
-	
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +20,7 @@ public class MainMenuScript : MonoBehaviour {
 		//}
 	}
 
-	public void LoadMainLevel()
+	public void LoadLevelSelect()
 	{
 		Application.LoadLevel ("LevelSelectScene");
 	}

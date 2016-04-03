@@ -6,6 +6,8 @@ public class PlayerMenuScript : MonoBehaviour {
 	public bool isStartButtonActive = false;
 	public bool isQuitButtonActive = false;
 
+
+
 	public string buttonString = "Submit";
 
 	// Use this for initialization
@@ -33,12 +35,14 @@ public class PlayerMenuScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "StartGame") {
+		if (other.gameObject.tag == "StartGame") 
+		{
 			isStartButtonActive = true;
 		}
 
 
-		if (other.gameObject.tag == "QuitGame") {
+		if (other.gameObject.tag == "QuitGame") 
+		{
 			isQuitButtonActive = true;
 		}
 
