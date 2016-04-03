@@ -36,7 +36,10 @@ public class PlayerAttackScript : MonoBehaviour {
 
 	Animator animator;
 
+	AudioSource audioSource;
 	public AudioClip pickUpSound;
+	public AudioClip attackSound;
+	public AudioClip fireballSound;
 
 
 
@@ -46,7 +49,7 @@ public class PlayerAttackScript : MonoBehaviour {
 		//initialisation
 
 		animator = GetComponent<Animator> ();
-
+		audioSource = GetComponent<AudioSource> ();
 		attackTrigger.enabled = false;
 
 	}
@@ -90,6 +93,7 @@ public class PlayerAttackScript : MonoBehaviour {
 				usingSpecial = true;
 				specialTimer = specialDelay;
 				Instantiate(fireballPrefab,fireballSpawn.transform.position,Quaternion.identity);
+				PlayFireballSound();
 			}
 
 			if (usingSpecial)
@@ -206,11 +210,21 @@ public class PlayerAttackScript : MonoBehaviour {
 		playerHealth.enabled = true;
 	}
 
+	void PlayAttackSound()
+	{
+		audioSource.PlayOneShot (attackSound);
+	}
+	void PlayFireballSound()
+	{
+		audioSource.PlayOneShot (fireballSound);
+	}
+
 	
 	void OnTriggerStay2D(Collider2D coll)
 	{
 
 		if (coll.gameObject.tag == "Player") {
+			PlayAttackSound();
 			StartCoroutine(coll.gameObject.GetComponent<PlayerHealthScript>().WaitAndRespawnPlayer());
 
 		}

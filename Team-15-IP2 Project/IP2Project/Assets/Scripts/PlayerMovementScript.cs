@@ -29,6 +29,7 @@ public class PlayerMovementScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		audioSource = GetComponent<AudioSource> ();
 		animator = GetComponent<Animator> ();
 		playerRb = GetComponent<Rigidbody2D> ();
@@ -41,8 +42,12 @@ public class PlayerMovementScript : MonoBehaviour {
 		playerSpeed = normalPlayerSpeed;
 		animator.SetBool("Climbing", false);
 
+		PlayerHealthScript playerHealthScript = this.gameObject.GetComponent<PlayerHealthScript> ();
+		this.transform.position = playerHealthScript.playerSpawn.transform.position;
 
+		
 	}
+
 	
 	// Update is called once per frame
 	void Update () 

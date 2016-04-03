@@ -23,6 +23,7 @@ public class CharacterChangeScript : MonoBehaviour {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		animator = GetComponent<Animator> ();
 
+
 	
 	}
 	
