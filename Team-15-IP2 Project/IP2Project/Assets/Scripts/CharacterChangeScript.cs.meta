@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 747d88ea865c83040a4a762468715f4a
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - red: {fileID: 21300000, guid: c8efbc64b9679a74c957104c2acfd5ba, type: 3}
+  - blue: {fileID: 21300000, guid: 442ed36f05bc2a44c8e4b43299cac7cd, type: 3}
+  - green: {fileID: 21300000, guid: c0bfe212c0397474fbeab0df4a9a7b0d, type: 3}
+  - yellow: {fileID: 21300000, guid: a0c25988fe22818469478291e73c4534, type: 3}
+  - redControl: {fileID: 22100000, guid: 079063e29e28a964aac0d935783db57e, type: 2}
+  - greenControl: {fileID: 22100000, guid: e57cd8edb701b964f9c630b3d3f27461, type: 2}
+  - blueControl: {fileID: 22100000, guid: e9ce443ff35b63d46bf1012a984a08b8, type: 2}
+  - yellowControl: {fileID: 9100000, guid: e94ae5ba6a849f545886d0d1accb667e, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

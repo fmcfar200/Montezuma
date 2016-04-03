@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CharacterChangeScript.cs" />
      <Compile Include="Assets\Scripts\EndGameScript.cs" />
      <Compile Include="Assets\Scripts\FireballScript.cs" />
      <Compile Include="Assets\Scripts\LevelSelectSceneScript.cs" />
