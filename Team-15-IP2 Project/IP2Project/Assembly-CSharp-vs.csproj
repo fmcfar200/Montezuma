@@ -47,23 +47,24 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ChangeSpriteScript.cs" />
+     <Compile Include="Assets\Scripts\Character Scripts\Player1ScoreScript.cs" />
+     <Compile Include="Assets\Scripts\Character Scripts\Player2ScoreScript.cs" />
+     <Compile Include="Assets\Scripts\Character Scripts\Player3ScoreScript.cs" />
+     <Compile Include="Assets\Scripts\Character Scripts\Player4ScoreScript.cs" />
+     <Compile Include="Assets\Scripts\Character Scripts\PlayerAttackScript.cs" />
+     <Compile Include="Assets\Scripts\Character Scripts\PlayerHealthScript.cs" />
+     <Compile Include="Assets\Scripts\Character Scripts\PlayerMovementScript.cs" />
      <Compile Include="Assets\Scripts\CharacterChangeScript.cs" />
+     <Compile Include="Assets\Scripts\CharacterMenu.cs" />
      <Compile Include="Assets\Scripts\DataScript.cs" />
      <Compile Include="Assets\Scripts\EndGameScript.cs" />
      <Compile Include="Assets\Scripts\FireballScript.cs" />
      <Compile Include="Assets\Scripts\LevelSelectSceneScript.cs" />
-     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
+     <Compile Include="Assets\Scripts\Main Menu\MainMenuScript.cs" />
+     <Compile Include="Assets\Scripts\Main Menu\PlayerMenuScript.cs" />
      <Compile Include="Assets\Scripts\PauseGameScript.cs" />
      <Compile Include="Assets\Scripts\PickupScript.cs" />
      <Compile Include="Assets\Scripts\PickupSpawnScript.cs" />
-     <Compile Include="Assets\Scripts\Player1ScoreScript.cs" />
-     <Compile Include="Assets\Scripts\Player2ScoreScript.cs" />
-     <Compile Include="Assets\Scripts\Player3ScoreScript.cs" />
-     <Compile Include="Assets\Scripts\Player4ScoreScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerAttackScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerHealthScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerMenuScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovementScript.cs" />
      <Compile Include="Assets\Scripts\TimeLeftScript.cs" />
      <Compile Include="Assets\Scripts\TopPlatformScript.cs" />
  <Reference Include="UnityEngine.UI">

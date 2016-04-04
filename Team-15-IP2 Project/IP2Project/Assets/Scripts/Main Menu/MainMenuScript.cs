@@ -20,9 +20,9 @@ public class MainMenuScript : MonoBehaviour {
 		//}
 	}
 
-	public void LoadLevelSelect()
+	public void LoadCharacterSelect()
 	{
-		Application.LoadLevel ("LevelSelectScene");
+		Application.LoadLevel ("CharacterSelect");
 	}
 
 	public void QuitGame()

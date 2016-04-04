@@ -15,6 +15,7 @@ public class LevelSelectSceneScript : MonoBehaviour {
 
 	public void LoadLevelOne()
 	{
+
 		Application.LoadLevel ("Level_1");
 	}
 

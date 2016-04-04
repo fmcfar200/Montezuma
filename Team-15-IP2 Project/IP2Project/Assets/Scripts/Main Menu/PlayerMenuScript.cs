@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerMenuScript : MonoBehaviour {
@@ -6,7 +7,14 @@ public class PlayerMenuScript : MonoBehaviour {
 	public bool isStartButtonActive = false;
 	public bool isQuitButtonActive = false;
 
+	public Button startButton;
+	public Button quitButton;
 
+	public Sprite startButtonActive;
+	public Sprite quitButtonActive;
+
+	public Sprite startButtonInactive;
+	public Sprite quitButtonInactive;
 
 	public string buttonString = "Submit";
 
@@ -38,12 +46,14 @@ public class PlayerMenuScript : MonoBehaviour {
 		if (other.gameObject.tag == "StartGame") 
 		{
 			isStartButtonActive = true;
+			startButton.image.sprite = startButtonActive;
 		}
 
 
 		if (other.gameObject.tag == "QuitGame") 
 		{
 			isQuitButtonActive = true;
+			quitButton.image.sprite = quitButtonActive;
 		}
 
 	}
@@ -53,10 +63,12 @@ public class PlayerMenuScript : MonoBehaviour {
 		if (other.gameObject.tag == "StartGame") 
 		{
 			isStartButtonActive = false;
+			startButton.image.sprite = startButtonInactive;
 		}
 		if (other.gameObject.tag == "QuitGame") 
 		{
 			isQuitButtonActive = false;
+			quitButton.image.sprite = quitButtonInactive;
 		}
 	}
 }

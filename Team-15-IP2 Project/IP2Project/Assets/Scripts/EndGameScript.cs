@@ -29,4 +29,9 @@ public class EndGameScript : MonoBehaviour {
 	{
 		Application.Quit ();
 	}
+
+	public void LoadMainMenu()
+	{
+		Application.LoadLevel ("MainMenu");
+	}
 }
