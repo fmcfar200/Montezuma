@@ -1,22 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character Scripts\PlayerAttackScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TimeLeftScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character Scripts\PlayerMovementScript.cs" Line="116" Column="1" />
-      <File FileName="Assets\Scripts\Character Scripts\PlayerAttackScript.cs" Line="59" Column="51" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FixItScript.cs">
-    <Files>
-      <File FileName="Assets\Scripts\FixItScript.cs" Line="9" Column="36" />
-      <File FileName="Assets\Scripts\EndGameScript.cs" Line="47" Column="32" />
-      <File FileName="Assets\Scripts\Main Menu\MainMenuScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WinScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TimeLeftScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CharacterChangeScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CharacterMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WinnerSprite.cs" Line="1" Column="1" />
->>>>>>> origin/master
+      <File FileName="Assets\Scripts\TimeLeftScript.cs" Line="44" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
