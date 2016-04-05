@@ -8,12 +8,8 @@ public class CharacterChangeScript : MonoBehaviour {
 	public Sprite green;
 	public Sprite yellow;
 
-	//public RuntimeAnimatorController redControl;
-	//public RuntimeAnimatorController greenControl;
-	//public RuntimeAnimatorController blueControl;
-	//public RuntimeAnimatorController yellowControl;
 
-	public GameObject DataObject;
+	//public GameObject DataObject;
 
 	private SpriteRenderer spriteRenderer;
 	private Animator animator;
@@ -21,7 +17,7 @@ public class CharacterChangeScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
-		//animator = GetComponent<Animator> ();
+
 
 
 	
@@ -39,36 +35,131 @@ public class CharacterChangeScript : MonoBehaviour {
 	public void ChangeSprite()
 	{
 
-		DataScript data = DataObject.GetComponent<DataScript> ();
+		//DataScript data = DataObject.GetComponent<DataScript> ();
 
-	
-		if (spriteRenderer.sprite == red /*|| animator.runtimeAnimatorController == redControl*/) 
+
+		if (this.gameObject.name == "Player1") 
 		{
-			data.playerSpriteNumber = 1;
-			spriteRenderer.sprite = blue;
-			//animator.runtimeAnimatorController = blueControl;
-			Debug.Log("Changed to blue sprite");
-		} 
-		else if (spriteRenderer.sprite == blue /*|| animator.runtimeAnimatorController == blueControl*/) 
+			GameObject g = GameObject.Find ("Player1Data");
+			DataScript data = g.GetComponent<DataScript>();
+
+			if (spriteRenderer.sprite == red ) 
+			{
+				data.playerSpriteNumber = 1;
+				spriteRenderer.sprite = blue;
+				Debug.Log("Changed to blue sprite");
+			} 
+			else if (spriteRenderer.sprite == blue ) 
+			{
+				data.playerSpriteNumber = 2;
+				spriteRenderer.sprite = green;
+				Debug.Log("Changed to green sprite");
+			} 
+			else if (spriteRenderer.sprite == green ) 
+			{
+				data.playerSpriteNumber = 3;
+				spriteRenderer.sprite = yellow;
+				Debug.Log("Changed to yellow sprite");
+			} 
+			else if(spriteRenderer.sprite == yellow ) 
+			{
+				data.playerSpriteNumber = 4;
+				spriteRenderer.sprite = red;
+				Debug.Log("Changed to red sprite");
+			}
+		}
+
+		if (this.gameObject.name == "Player2") 
 		{
-			data.playerSpriteNumber = 2;
-			spriteRenderer.sprite = green;
-			//animator.runtimeAnimatorController = greenControl;
-			Debug.Log("Changed to green sprite");
-		} 
-		else if (spriteRenderer.sprite == green /*|| animator.runtimeAnimatorController == greenControl*/) 
+			GameObject g = GameObject.Find ("Player2Data");
+			DataScript data = g.GetComponent<DataScript>();
+			
+			if (spriteRenderer.sprite == red ) 
+			{
+				data.playerSpriteNumber = 1;
+				spriteRenderer.sprite = blue;
+				Debug.Log("Changed to blue sprite");
+			} 
+			else if (spriteRenderer.sprite == blue ) 
+			{
+				data.playerSpriteNumber = 2;
+				spriteRenderer.sprite = green;
+				Debug.Log("Changed to green sprite");
+			} 
+			else if (spriteRenderer.sprite == green ) 
+			{
+				data.playerSpriteNumber = 3;
+				spriteRenderer.sprite = yellow;
+				Debug.Log("Changed to yellow sprite");
+			} 
+			else if(spriteRenderer.sprite == yellow ) 
+			{
+				data.playerSpriteNumber = 4;
+				spriteRenderer.sprite = red;
+				Debug.Log("Changed to red sprite");
+			}
+		}
+
+		if (this.gameObject.name == "Player3") 
 		{
-			data.playerSpriteNumber = 3;
-			spriteRenderer.sprite = yellow;
-			//animator.runtimeAnimatorController = yellowControl;
-			Debug.Log("Changed to yellow sprite");
-		} 
-		else if(spriteRenderer.sprite == yellow /*|| animator.runtimeAnimatorController == yellowControl*/) 
+			GameObject g = GameObject.Find ("Player3Data");
+			DataScript data = g.GetComponent<DataScript>();
+			
+			if (spriteRenderer.sprite == red ) 
+			{
+				data.playerSpriteNumber = 1;
+				spriteRenderer.sprite = blue;
+				Debug.Log("Changed to blue sprite");
+			} 
+			else if (spriteRenderer.sprite == blue ) 
+			{
+				data.playerSpriteNumber = 2;
+				spriteRenderer.sprite = green;
+				Debug.Log("Changed to green sprite");
+			} 
+			else if (spriteRenderer.sprite == green ) 
+			{
+				data.playerSpriteNumber = 3;
+				spriteRenderer.sprite = yellow;
+				Debug.Log("Changed to yellow sprite");
+			} 
+			else if(spriteRenderer.sprite == yellow ) 
+			{
+				data.playerSpriteNumber = 4;
+				spriteRenderer.sprite = red;
+				Debug.Log("Changed to red sprite");
+			}
+		}
+
+		if (this.gameObject.name == "Player4") 
 		{
-			data.playerSpriteNumber = 4;
-			spriteRenderer.sprite = red;
-		//	animator.runtimeAnimatorController = redControl;
-			Debug.Log("Changed to red sprite");
+			GameObject g = GameObject.Find ("Player4Data");
+			DataScript data = g.GetComponent<DataScript>();
+			
+			if (spriteRenderer.sprite == red ) 
+			{
+				data.playerSpriteNumber = 1;
+				spriteRenderer.sprite = blue;
+				Debug.Log("Changed to blue sprite");
+			} 
+			else if (spriteRenderer.sprite == blue ) 
+			{
+				data.playerSpriteNumber = 2;
+				spriteRenderer.sprite = green;
+				Debug.Log("Changed to green sprite");
+			} 
+			else if (spriteRenderer.sprite == green ) 
+			{
+				data.playerSpriteNumber = 3;
+				spriteRenderer.sprite = yellow;
+				Debug.Log("Changed to yellow sprite");
+			} 
+			else if(spriteRenderer.sprite == yellow ) 
+			{
+				data.playerSpriteNumber = 4;
+				spriteRenderer.sprite = red;
+				Debug.Log("Changed to red sprite");
+			}
 		}
 	}
 }

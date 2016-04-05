@@ -10,11 +10,15 @@ public class TimeLeftScript : MonoBehaviour {
 
 
 
-
 	// Use this for initialization
 	void Start () {
 
-
+		GameObject scoreObject = GameObject.Find ("ScoreObject");
+		if (scoreObject == null) 
+		{
+			scoreObject = new GameObject("ScoreObject");
+			scoreObject.AddComponent<WinScript>();
+		}
 
 	}
 	
