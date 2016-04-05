@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerHealthScript : MonoBehaviour {
 
@@ -9,10 +10,15 @@ public class PlayerHealthScript : MonoBehaviour {
 
 	public float respawnTimer = 5.0f;
 
+	AudioSource audioSource;
+	public List<AudioClip> deathSounds;
+
 	GameObject player;
 	GameObject topPlatform;
 	// Use this for initialization
 	void Start () {
+		audioSource = this.gameObject.GetComponent<AudioSource> ();
+
 		player = this.gameObject;
 		topPlatform = GameObject.Find("King_Platform");
 		if (topPlatform == null) {
@@ -38,7 +44,7 @@ public class PlayerHealthScript : MonoBehaviour {
 
 		player.GetComponent<PlayerAttackScript> ().isDictator = false;
 		this.transform.position = playerSpawn.position;
-
+		PlayRandomDeathSound ();
 
 		yield return new WaitForSeconds (respawnTimer);
 		player.GetComponent<PlayerMovementScript> ().enabled = true;
@@ -47,6 +53,12 @@ public class PlayerHealthScript : MonoBehaviour {
 		player.GetComponent<Rigidbody2D> ().isKinematic = false;
 		player.GetComponent<SpriteRenderer> ().color = new Color(1.0f,1.0f,1.0f,normAlphaVal);
 
+	}
+
+	void PlayRandomDeathSound()
+	{
+		int randomIndex = Random.Range (0, deathSounds.Count);
+		audioSource.PlayOneShot (deathSounds [randomIndex]);
 	}
 
 	void OnCollisionEnter2D(Collision2D coll)

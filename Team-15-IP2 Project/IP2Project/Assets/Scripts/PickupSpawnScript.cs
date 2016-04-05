@@ -8,9 +8,11 @@ public class PickupSpawnScript : MonoBehaviour {
 	public List<Transform> pickupSpawns = new List<Transform>();
 	private float spawnDelay;
 	private float time;
-
+	AudioSource audioSource;
+	public AudioClip spawnSound;
 	void Start()
 	{
+		audioSource = GetComponent<AudioSource> ();
 		time = 0;
 		SetRandomDelay ();
 	}
@@ -38,6 +40,7 @@ public class PickupSpawnScript : MonoBehaviour {
 
 	void SpawnPower()
 	{
+		audioSource.PlayOneShot (spawnSound);
 		int iThePickup = Random.Range (0, pickupPrefabs.Count);
 		int iTheSpawn = Random.Range (0, pickupSpawns.Count);
 		time = 0;

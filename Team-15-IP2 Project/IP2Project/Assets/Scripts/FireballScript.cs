@@ -4,13 +4,13 @@ using System.Collections;
 public class FireballScript : MonoBehaviour {
 
 	private float speed	= -5.0f;
-	private Rigidbody2D fireballRb;
+	private Rigidbody2D spearRb;
 	private float destroyDelay = 3.0f;
 	private float destroyTimer;
 
 	// Use this for initialization
 	void Start () {
-		fireballRb = GetComponent<Rigidbody2D> ();
+		spearRb = GetComponent<Rigidbody2D> ();
 		destroyTimer = destroyDelay;
 
 	}
@@ -19,7 +19,7 @@ public class FireballScript : MonoBehaviour {
 	
 	void FixedUpdate()
 	{
-		fireballRb.velocity = new Vector2(0,speed);
+		spearRb.velocity = new Vector2(0,speed);
 
 		if (destroyTimer > 0) {
 			destroyTimer -= Time.deltaTime;
@@ -27,6 +27,15 @@ public class FireballScript : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 
+	}
+
+	void OnCollisionEnter2D(Collision2D coll)
+	{
+		if (coll.gameObject.tag == "OOB") {
+
+			Destroy(this.gameObject);
+		}
+		
 	}
 
 

@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Character Scripts\Player4ScoreScript.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\PlayerAttackScript.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\PlayerHealthScript.cs" />
+     <Compile Include="Assets\Scripts\Character Scripts\PlayerMarkerScript.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\PlayerMovementScript.cs" />
      <Compile Include="Assets\Scripts\CharacterChangeScript.cs" />
      <Compile Include="Assets\Scripts\CharacterMenu.cs" />

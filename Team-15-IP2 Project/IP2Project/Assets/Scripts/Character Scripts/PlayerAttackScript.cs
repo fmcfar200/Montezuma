@@ -15,8 +15,8 @@ public class PlayerAttackScript : MonoBehaviour {
 
 	public bool isDictator = false;
 
-	public GameObject fireballPrefab;
-	public Transform fireballSpawn;
+	public GameObject spearPrefab;
+	public Transform spearSpawn;
 	private bool usingSpecial = false;
 	private float specialTimer = 0;
 	private float specialDelay = 0.5f;
@@ -40,6 +40,11 @@ public class PlayerAttackScript : MonoBehaviour {
 	public AudioClip pickUpSound;
 	public AudioClip attackSound;
 	public AudioClip fireballSound;
+	public AudioClip iceHitSound;
+	public AudioClip iceBreakSound;
+	public AudioClip windSound;
+	public AudioClip shieldSound;
+	public AudioClip speedSound;
 
 
 
@@ -92,7 +97,7 @@ public class PlayerAttackScript : MonoBehaviour {
 			{
 				usingSpecial = true;
 				specialTimer = specialDelay;
-				Instantiate(fireballPrefab,fireballSpawn.transform.position,Quaternion.identity);
+				Instantiate(spearPrefab,spearSpawn.transform.position,Quaternion.identity);
 				PlayFireballSound();
 			}
 
@@ -145,7 +150,7 @@ public class PlayerAttackScript : MonoBehaviour {
 	IEnumerator WindPower()
 	{
 		Debug.Log("Power used");
-	
+		audioSource.PlayOneShot (windSound);
 		RaycastHit2D hit = Physics2D.Raycast (powerSpawn.transform.position ,(this.transform.localScale.x)*Vector2.right);
 		if (hit.collider != null) {
 			Debug.Log("Hit "+hit.collider.gameObject.name.ToString());
@@ -180,9 +185,11 @@ public class PlayerAttackScript : MonoBehaviour {
 				hitAttack.freezeObj.SetActive(true);
 				hitRb2D.velocity = new Vector2(0,0);
 				hitMovement.enabled = false;
+				audioSource.PlayOneShot(iceHitSound);
 				yield return new WaitForSeconds (5.0f);
 				hitMovement.enabled = true;
 				hitAttack.freezeObj.SetActive(false);
+				audioSource.PlayOneShot(iceBreakSound);
 			}
 		} else {
 			Debug.Log("NO HIT");
@@ -191,6 +198,7 @@ public class PlayerAttackScript : MonoBehaviour {
 
 	IEnumerator SpeedBoost()
 	{
+		audioSource.PlayOneShot (speedSound);
 		PlayerMovementScript playerMovement = this.gameObject.GetComponent<PlayerMovementScript> ();
 		runObj.SetActive (true);
 		playerMovement.playerSpeed = playerMovement.speedBoostSpeed;
@@ -202,6 +210,7 @@ public class PlayerAttackScript : MonoBehaviour {
 
 	IEnumerator ShieldPower()
 	{
+		audioSource.PlayOneShot (shieldSound);
 		PlayerHealthScript playerHealth = this.gameObject.GetComponent<PlayerHealthScript> ();
 		shieldObj.SetActive (true);
 		playerHealth.enabled = false;

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerMovementScript : MonoBehaviour {
 
@@ -25,7 +26,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	private Animator animator;
 
 	AudioSource audioSource;
-	public AudioClip jumpSound;
+	public List<AudioClip> jumpSounds;
 
 	// Use this for initialization
 	void Start () {
@@ -100,7 +101,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		if (Jump== true) 
 		{
 			//Debug.Log(this.gameObject.name +" Jumped");
-			PlayJumpSound();
+			PlayRandomJumpSound();
 			playerRb.AddForce(new Vector2(playerRb.velocity.x,jumpForce));
 			Jump = false;
 		}
@@ -120,9 +121,10 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		}
 	}
-	void PlayJumpSound()
+	void PlayRandomJumpSound()
 	{
-		audioSource.PlayOneShot (jumpSound);
+		int randomIndex = Random.Range (0, jumpSounds.Count);
+		audioSource.PlayOneShot (jumpSounds [randomIndex]);
 	}
 
 	void OnTriggerEnter2D(Collider2D coll)
