@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CharacterMenu : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 
