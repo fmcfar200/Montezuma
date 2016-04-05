@@ -25,6 +25,7 @@ public class PlayerMovementScript : MonoBehaviour {
 
 	private Animator animator;
 
+
 	AudioSource audioSource;
 	public List<AudioClip> jumpSounds;
 

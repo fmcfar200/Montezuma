@@ -35,6 +35,8 @@ public class PlayerAttackScript : MonoBehaviour {
 	public Transform powerSpawn;
 
 	Animator animator;
+	public AnimatorOverrideController dictatorController;
+	public AnimatorOverrideController normalCont;
 
 	AudioSource audioSource;
 	public AudioClip pickUpSound;
@@ -54,6 +56,8 @@ public class PlayerAttackScript : MonoBehaviour {
 		//initialisation
 
 		animator = GetComponent<Animator> ();
+		animator.runtimeAnimatorController = normalCont;
+		animator.SetBool ("Moving", false);
 		audioSource = GetComponent<AudioSource> ();
 		attackTrigger.enabled = false;
 
@@ -86,11 +90,10 @@ public class PlayerAttackScript : MonoBehaviour {
 		// isDictator is set when the top platform script detects one person colliding with it.
 		if (isDictator) {
 
-			//TEMP START
-			animator.enabled = false;
-			//TEMP END
 			this.gameObject.GetComponent<SpriteRenderer> ().sprite = dictatorSprite;
+			animator.runtimeAnimatorController = dictatorController;
 			this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
+
 
 
 			if (Input.GetButtonDown (specialString) && !usingSpecial) 
@@ -116,7 +119,7 @@ public class PlayerAttackScript : MonoBehaviour {
 		else 
 		{
 			this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSprite;
-			animator.enabled = true;
+			animator.runtimeAnimatorController = normalCont;
 		}
 
 		if (windPowerReady) {
