@@ -5,8 +5,10 @@ public class FixItScript : MonoBehaviour {
 
 	IEnumerator WaitAndDestroy()
 	{
-		yield return new WaitForSeconds(10.0f);
-		Destroy (this.gameObject);
+
+		yield return new WaitForSeconds(1.0f);
+		gameObject.transform.position = Vector3.zero;
+		//Destroy (this.gameObject);
 	}
 
 	// Use this for initialization
