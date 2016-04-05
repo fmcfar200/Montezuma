@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\DataScript.cs" />
      <Compile Include="Assets\Scripts\EndGameScript.cs" />
      <Compile Include="Assets\Scripts\FireballScript.cs" />
+     <Compile Include="Assets\Scripts\FixItScript.cs" />
      <Compile Include="Assets\Scripts\LevelSelectSceneScript.cs" />
      <Compile Include="Assets\Scripts\Main Menu\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\Main Menu\PlayerMenuScript.cs" />

@@ -30,7 +30,7 @@ public class PlayerMenuScript : MonoBehaviour {
 
 		if (Input.GetButtonDown (buttonString) && (isStartButtonActive)) 
 		{
-			Application.LoadLevel("LevelSelectScene");
+			Application.LoadLevel("CharacterSelect");
 		}
 
 		if (Input.GetButtonDown (buttonString) && (isQuitButtonActive)) 

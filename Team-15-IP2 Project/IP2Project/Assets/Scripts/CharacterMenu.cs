@@ -15,6 +15,6 @@ public class CharacterMenu : MonoBehaviour {
 
 	public void LoadLevelSelect()
 	{
-		Application.LoadLevel ("Tutorial Scene");
+		Application.LoadLevel ("LevelSelectScene");
 	}
 }
