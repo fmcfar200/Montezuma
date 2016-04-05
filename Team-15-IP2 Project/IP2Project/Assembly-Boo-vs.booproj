@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{E98E4FB9-C492-EE43-8E19-828EC1F68D32}</ProjectGuid>
+	<ProjectGuid>{4DBB393B-6804-96BA-2A68-E1EEEBF91B20}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-Boo</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,31 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ChangeSpriteScript.cs" />
-     <Compile Include="Assets\Scripts\Character Scripts\Player1ScoreScript.cs" />
-     <Compile Include="Assets\Scripts\Character Scripts\Player2ScoreScript.cs" />
-     <Compile Include="Assets\Scripts\Character Scripts\Player3ScoreScript.cs" />
-     <Compile Include="Assets\Scripts\Character Scripts\Player4ScoreScript.cs" />
-     <Compile Include="Assets\Scripts\Character Scripts\PlayerAttackScript.cs" />
-     <Compile Include="Assets\Scripts\Character Scripts\PlayerHealthScript.cs" />
-     <Compile Include="Assets\Scripts\Character Scripts\PlayerMarkerScript.cs" />
-     <Compile Include="Assets\Scripts\Character Scripts\PlayerMovementScript.cs" />
-     <Compile Include="Assets\Scripts\CharacterChangeScript.cs" />
-     <Compile Include="Assets\Scripts\CharacterMenu.cs" />
-     <Compile Include="Assets\Scripts\DataScript.cs" />
-     <Compile Include="Assets\Scripts\EndGameScript.cs" />
-     <Compile Include="Assets\Scripts\FireballScript.cs" />
-     <Compile Include="Assets\Scripts\FixItScript.cs" />
-     <Compile Include="Assets\Scripts\LevelSelectSceneScript.cs" />
-     <Compile Include="Assets\Scripts\Main Menu\MainMenuScript.cs" />
-     <Compile Include="Assets\Scripts\Main Menu\PlayerMenuScript.cs" />
-     <Compile Include="Assets\Scripts\PauseGameScript.cs" />
-     <Compile Include="Assets\Scripts\PickupScript.cs" />
-     <Compile Include="Assets\Scripts\PickupSpawnScript.cs" />
-     <Compile Include="Assets\Scripts\TimeLeftScript.cs" />
-     <Compile Include="Assets\Scripts\TopPlatformScript.cs" />
-     <Compile Include="Assets\Scripts\WinScript.cs" />
-     <Compile Include="Assets\Scripts\WinnerUIScript.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.boo" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.8/Standalone/UnityEngine.UI.dll</HintPath>
  </Reference>

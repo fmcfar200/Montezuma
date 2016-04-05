@@ -9,6 +9,8 @@ public class TimeLeftScript : MonoBehaviour {
 
 
 
+
+
 	// Use this for initialization
 	void Start () {
 
@@ -28,7 +30,6 @@ public class TimeLeftScript : MonoBehaviour {
 		
 		if (timeLeft <= 0) {
 
-			
 			Application.LoadLevel ("EndScene");
 		}
 
