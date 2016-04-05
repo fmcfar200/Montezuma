@@ -5,6 +5,12 @@ using System.Collections;
 public class EndGameScript : MonoBehaviour {
 
 	public Text winnerText;
+	public Image winnerSprite;
+
+	public Sprite yellow;
+	public Sprite red;
+	public Sprite blue;
+	public Sprite green;
 	
 
 	// Use this for initialization
@@ -23,18 +29,22 @@ public class EndGameScript : MonoBehaviour {
 			if (win.winningPlayer == 1)
 			{
 				winnerText.text = "Player 1 Wins!";
+				winnerSprite.sprite = yellow;
 			}
 			else if(win.winningPlayer == 2)
 			{
 				winnerText.text = "Player 2 Wins!";
+				winnerSprite.sprite = red;
 			}
 			else if(win.winningPlayer == 3)
 			{
 				winnerText.text = "Player 3 Wins!";
+				winnerSprite.sprite = green;
 			}
 			else if(win.winningPlayer == 4)
 			{
 				winnerText.text = "Player 4 Wins!";
+				winnerSprite.sprite = blue;
 			}
 			else if(win.winningPlayer == 5)
 			{
