@@ -28,17 +28,20 @@ public class ChangeSpriteScript : MonoBehaviour {
 
 			if(g != null)
 			{
-			DataScript d = g.GetComponent<DataScript>();
+
+				DataScript d = g.GetComponent<DataScript>();
 
 				if(d.playerSpriteNumber == 1)
 				{
 					spriteRenderer.sprite = blue;
 					animator.runtimeAnimatorController = blueControl;
+
 				}
 				else if(d.playerSpriteNumber == 2)
 				{
 					spriteRenderer.sprite = green;
 					animator.runtimeAnimatorController = greenControl;
+
 				}
 				else if(d.playerSpriteNumber == 3)
 				{

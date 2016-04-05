@@ -34,9 +34,9 @@ public class PlayerAttackScript : MonoBehaviour {
 
 	public Transform powerSpawn;
 
-	Animator animator;
+	private Animator animator;
 	public AnimatorOverrideController dictatorController;
-	public AnimatorOverrideController normalCont;
+	//public AnimatorOverrideController normalCont;
 
 	AudioSource audioSource;
 	public AudioClip pickUpSound;
@@ -48,15 +48,25 @@ public class PlayerAttackScript : MonoBehaviour {
 	public AudioClip shieldSound;
 	public AudioClip speedSound;
 
+	public Sprite yellow;
+	public Sprite red;
+	public Sprite blue;
+	public Sprite green;
 
+	public RuntimeAnimatorController redControl;
+	public RuntimeAnimatorController greenControl;
+	public RuntimeAnimatorController blueControl;
+	public RuntimeAnimatorController yellowControl;
+
+	private SpriteRenderer spriteRenderer;
 
 	// Use this for initialization
 	void Start () 
 	{
 		//initialisation
-
+		spriteRenderer = GetComponent<SpriteRenderer> ();
 		animator = GetComponent<Animator> ();
-		animator.runtimeAnimatorController = normalCont;
+		//animator.runtimeAnimatorController = normalCont;
 		animator.SetBool ("Moving", false);
 		audioSource = GetComponent<AudioSource> ();
 		attackTrigger.enabled = false;
@@ -118,8 +128,134 @@ public class PlayerAttackScript : MonoBehaviour {
 		} 
 		else 
 		{
-			this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSprite;
-			animator.runtimeAnimatorController = normalCont;
+			//this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSprite;
+			//animator.runtimeAnimatorController = normalCont;
+			if (this.gameObject.name == "Player1") 
+			{
+				GameObject g = GameObject.Find("Player1Data");
+				
+				if(g != null)
+				{
+					
+					DataScript d = g.GetComponent<DataScript>();
+					
+					if(d.playerSpriteNumber == 1)
+					{
+						spriteRenderer.sprite = blue;
+						animator.runtimeAnimatorController = blueControl;
+						
+					}
+					else if(d.playerSpriteNumber == 2)
+					{
+						spriteRenderer.sprite = green;
+						animator.runtimeAnimatorController = greenControl;
+						
+					}
+					else if(d.playerSpriteNumber == 3)
+					{
+						spriteRenderer.sprite = yellow;
+						animator.runtimeAnimatorController = yellowControl;
+					}
+					else if(d.playerSpriteNumber == 4)
+					{
+						spriteRenderer.sprite = red;
+						animator.runtimeAnimatorController = redControl;
+					}
+				}
+			}
+			
+			else if (this.gameObject.name == "Player2") 
+			{
+				GameObject g = GameObject.Find("Player2Data");
+				
+				if(g != null)
+				{
+					DataScript d = g.GetComponent<DataScript>();
+					
+					if(d.playerSpriteNumber == 1)
+					{
+						spriteRenderer.sprite = blue;
+						animator.runtimeAnimatorController = blueControl;
+					}
+					else if(d.playerSpriteNumber == 2)
+					{
+						spriteRenderer.sprite = green;
+						animator.runtimeAnimatorController = greenControl;
+					}
+					else if(d.playerSpriteNumber == 3)
+					{
+						spriteRenderer.sprite = yellow;
+						animator.runtimeAnimatorController = yellowControl;
+					}
+					else if(d.playerSpriteNumber == 4)
+					{
+						spriteRenderer.sprite = red;
+						animator.runtimeAnimatorController = redControl;
+					}
+				}
+			}
+			
+			else if (this.gameObject.name == "Player3") 
+			{
+				GameObject g = GameObject.Find("Player3Data");
+				
+				if(g != null)
+				{
+					DataScript d = g.GetComponent<DataScript>();
+					
+					if(d.playerSpriteNumber == 1)
+					{
+						spriteRenderer.sprite = blue;
+						animator.runtimeAnimatorController = blueControl;
+					}
+					else if(d.playerSpriteNumber == 2)
+					{
+						spriteRenderer.sprite = green;
+						animator.runtimeAnimatorController = greenControl;
+					}
+					else if(d.playerSpriteNumber == 3)
+					{
+						spriteRenderer.sprite = yellow;
+						animator.runtimeAnimatorController = yellowControl;
+					}
+					else if(d.playerSpriteNumber == 4)
+					{
+						spriteRenderer.sprite = red;
+						animator.runtimeAnimatorController = redControl;
+					}
+				}
+			}
+			
+			else if (this.gameObject.name == "Player4") 
+			{
+				GameObject g = GameObject.Find("Player4Data");
+				
+				if(g != null)
+				{
+					DataScript d = g.GetComponent<DataScript>();
+					
+					if(d.playerSpriteNumber == 1)
+					{
+						spriteRenderer.sprite = blue;
+						animator.runtimeAnimatorController = blueControl;
+					}
+					else if(d.playerSpriteNumber == 2)
+					{
+						spriteRenderer.sprite = green;
+						animator.runtimeAnimatorController = greenControl;
+					}
+					else if(d.playerSpriteNumber == 3)
+					{
+						spriteRenderer.sprite = yellow;
+						animator.runtimeAnimatorController = yellowControl;
+					}
+					else if(d.playerSpriteNumber == 4)
+					{
+						spriteRenderer.sprite = red;
+						animator.runtimeAnimatorController = redControl;
+					}
+				}
+			}
 		}
 
 		if (windPowerReady) {
