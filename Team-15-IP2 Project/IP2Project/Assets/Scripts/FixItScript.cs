@@ -5,7 +5,7 @@ public class FixItScript : MonoBehaviour {
 
 	IEnumerator WaitAndDestroy()
 	{
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(10.0f);
 		Destroy (this.gameObject);
 	}
 

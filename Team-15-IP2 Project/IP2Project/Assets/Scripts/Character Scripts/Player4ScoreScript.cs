@@ -6,6 +6,7 @@ public class Player4ScoreScript: MonoBehaviour {
 
 	public Text player4Text;
 	public float player4Score;
+	float timeStep = 1.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,12 @@ public class Player4ScoreScript: MonoBehaviour {
 
 		if (playerAttackScript.isDictator) 
 		{
-			player4Score += Time.deltaTime;
+			timeStep -= Time.deltaTime;
+			if (timeStep <= 0) 
+			{
+				player4Score ++;
+				timeStep = 1;
+			}
 		}
 		player4Text.text = "Player 4 Score: " + player4Score;
 	
