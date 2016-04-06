@@ -61,6 +61,8 @@ public class EndGameScript : MonoBehaviour {
 	{
 		Application.LoadLevel ("LevelSelectScene");
 	}
+
+
 	
 	public void QuitGame()
 	{

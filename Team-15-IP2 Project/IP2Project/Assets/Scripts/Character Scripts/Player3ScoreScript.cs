@@ -27,7 +27,7 @@ public class Player3ScoreScript: MonoBehaviour {
 				timeStep = 1;
 			}
 		}
-		player3Text.text = "Player 3 Score: " + player3Score;
+		player3Text.text = "P3 Score: " + player3Score;
 	
 	}
 }
