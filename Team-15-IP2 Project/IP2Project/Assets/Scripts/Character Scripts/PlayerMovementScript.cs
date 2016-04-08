@@ -8,7 +8,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	public float playerSpeed;	//speed of the player
 	public float normalPlayerSpeed = 2.0f;
 	public float speedBoostSpeed = 4.0f;
-	float moveHor;				//holds the float variable for player movement
+	public float moveHor;				//holds the float variable for player movement
 	public float jumpForce;		//force of the basic jump
 	public float dblJumpForce;	//force of the second jump
 
@@ -29,6 +29,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	AudioSource audioSource;
 	public List<AudioClip> jumpSounds;
 
+
 	// Use this for initialization
 	void Start () {
 
@@ -47,7 +48,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		PlayerHealthScript playerHealthScript = this.gameObject.GetComponent<PlayerHealthScript> ();
 		this.transform.position = playerHealthScript.playerSpawn.transform.position;
 
-		
+
 	}
 
 	
@@ -89,6 +90,7 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		} else if (moveHor == 0) {
 			animator.SetBool("Moving",false);
+
 		}
 
 		else {

@@ -35,8 +35,7 @@ public class PlayerAttackScript : MonoBehaviour {
 	public Transform powerSpawn;
 
 	private Animator animator;
-	public AnimatorOverrideController dictatorController;
-	//public AnimatorOverrideController normalCont;
+	public AnimatorOverrideController normalCont;
 
 	AudioSource audioSource;
 	public AudioClip pickUpSound;
@@ -68,6 +67,8 @@ public class PlayerAttackScript : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 		//animator.runtimeAnimatorController = normalCont;
 		animator.SetBool ("Moving", false);
+		animator.SetBool("Climbing", false);
+		animator.SetBool("Dictator", false);
 		audioSource = GetComponent<AudioSource> ();
 		attackTrigger.enabled = false;
 
@@ -76,6 +77,10 @@ public class PlayerAttackScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (animator.GetBool("Dictator") == true && animator.GetBool("Moving") == false)
+		{
+			spriteRenderer.sprite = dictatorSprite;
+		}
 		//code for melee attack
 		if (Input.GetButtonDown (attackString) && !attacking) 
 		{
@@ -100,10 +105,8 @@ public class PlayerAttackScript : MonoBehaviour {
 		// isDictator is set when the top platform script detects one person colliding with it.
 		if (isDictator) {
 
+			animator.SetBool("Dictator", true);
 			this.gameObject.GetComponent<SpriteRenderer> ().sprite = dictatorSprite;
-			animator.runtimeAnimatorController = dictatorController;
-			this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
-
 
 
 			if (Input.GetButtonDown (specialString) && !usingSpecial) 
@@ -128,8 +131,8 @@ public class PlayerAttackScript : MonoBehaviour {
 		} 
 		else 
 		{
-			//this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSprite;
-			//animator.runtimeAnimatorController = normalCont;
+			this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSprite;
+			animator.SetBool("Dictator", false);
 			if (this.gameObject.name == "Player1") 
 			{
 				GameObject g = GameObject.Find("Player1Data");
