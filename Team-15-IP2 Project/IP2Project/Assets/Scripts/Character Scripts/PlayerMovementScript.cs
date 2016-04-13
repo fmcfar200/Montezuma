@@ -16,8 +16,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	public bool onTopPlat = false;
 	private bool Jump = false;			//variable for when the player is jumping
 	private Transform groundCheck;		//holds transform object for checking if the player is on the ground
-	private bool onLadder = false;
-	//private bool climb = false;
+	public bool onLadder = false;
 
 	public string horizontalString = "Horizontal_P1";
 	public string jumpString = "Jump_P1";
@@ -86,15 +85,19 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		if (moveHor < 0) {
 			this.transform.localScale = new Vector3 (-1, 1, 1);
+			GetComponent<Animator>().enabled = true;
+
 			animator.SetBool("Moving", true	);
 
 		} else if (moveHor == 0) {
 			animator.SetBool("Moving",false);
+			GetComponent<Animator>().enabled = false;
 
 		}
 
 		else {
 			this.transform.localScale = new Vector3 (1, 1,1);
+			GetComponent<Animator>().enabled = true;
 			animator.SetBool("Moving", true	);
 
 		}

@@ -51,6 +51,8 @@ public class PlayerHealthScript : MonoBehaviour {
 		player.GetComponent<PlayerAttackScript> ().enabled = true;
 		player.GetComponent<BoxCollider2D> ().enabled = true;
 		player.GetComponent<Rigidbody2D> ().isKinematic = false;
+		player.GetComponent<PlayerAttackScript> ().isDictator = false;
+		player.GetComponent<PlayerMovementScript> ().onLadder = false;
 		player.GetComponent<SpriteRenderer> ().color = new Color(1.0f,1.0f,1.0f,normAlphaVal);
 
 	}

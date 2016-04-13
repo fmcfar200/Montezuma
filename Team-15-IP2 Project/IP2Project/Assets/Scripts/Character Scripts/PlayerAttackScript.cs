@@ -77,10 +77,7 @@ public class PlayerAttackScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (animator.GetBool("Dictator") == true && animator.GetBool("Moving") == false)
-		{
-			spriteRenderer.sprite = dictatorSprite;
-		}
+
 		//code for melee attack
 		if (Input.GetButtonDown (attackString) && !attacking) 
 		{
@@ -109,6 +106,7 @@ public class PlayerAttackScript : MonoBehaviour {
 			this.gameObject.GetComponent<SpriteRenderer> ().sprite = dictatorSprite;
 
 
+
 			if (Input.GetButtonDown (specialString) && !usingSpecial) 
 			{
 				usingSpecial = true;
@@ -133,132 +131,133 @@ public class PlayerAttackScript : MonoBehaviour {
 		{
 			this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSprite;
 			animator.SetBool("Dictator", false);
-			if (this.gameObject.name == "Player1") 
-			{
-				GameObject g = GameObject.Find("Player1Data");
-				
-				if(g != null)
-				{
-					
-					DataScript d = g.GetComponent<DataScript>();
-					
-					if(d.playerSpriteNumber == 1)
-					{
-						spriteRenderer.sprite = blue;
-						animator.runtimeAnimatorController = blueControl;
-						
-					}
-					else if(d.playerSpriteNumber == 2)
-					{
-						spriteRenderer.sprite = green;
-						animator.runtimeAnimatorController = greenControl;
-						
-					}
-					else if(d.playerSpriteNumber == 3)
-					{
-						spriteRenderer.sprite = yellow;
-						animator.runtimeAnimatorController = yellowControl;
-					}
-					else if(d.playerSpriteNumber == 4)
-					{
-						spriteRenderer.sprite = red;
-						animator.runtimeAnimatorController = redControl;
-					}
-				}
-			}
-			
-			else if (this.gameObject.name == "Player2") 
-			{
-				GameObject g = GameObject.Find("Player2Data");
-				
-				if(g != null)
-				{
-					DataScript d = g.GetComponent<DataScript>();
-					
-					if(d.playerSpriteNumber == 1)
-					{
-						spriteRenderer.sprite = blue;
-						animator.runtimeAnimatorController = blueControl;
-					}
-					else if(d.playerSpriteNumber == 2)
-					{
-						spriteRenderer.sprite = green;
-						animator.runtimeAnimatorController = greenControl;
-					}
-					else if(d.playerSpriteNumber == 3)
-					{
-						spriteRenderer.sprite = yellow;
-						animator.runtimeAnimatorController = yellowControl;
-					}
-					else if(d.playerSpriteNumber == 4)
-					{
-						spriteRenderer.sprite = red;
-						animator.runtimeAnimatorController = redControl;
-					}
-				}
-			}
-			
-			else if (this.gameObject.name == "Player3") 
-			{
-				GameObject g = GameObject.Find("Player3Data");
-				
-				if(g != null)
-				{
-					DataScript d = g.GetComponent<DataScript>();
-					
-					if(d.playerSpriteNumber == 1)
-					{
-						spriteRenderer.sprite = blue;
-						animator.runtimeAnimatorController = blueControl;
-					}
-					else if(d.playerSpriteNumber == 2)
-					{
-						spriteRenderer.sprite = green;
-						animator.runtimeAnimatorController = greenControl;
-					}
-					else if(d.playerSpriteNumber == 3)
-					{
-						spriteRenderer.sprite = yellow;
-						animator.runtimeAnimatorController = yellowControl;
-					}
-					else if(d.playerSpriteNumber == 4)
-					{
-						spriteRenderer.sprite = red;
-						animator.runtimeAnimatorController = redControl;
-					}
-				}
-			}
-			
-			else if (this.gameObject.name == "Player4") 
-			{
-				GameObject g = GameObject.Find("Player4Data");
-				
-				if(g != null)
-				{
-					DataScript d = g.GetComponent<DataScript>();
-					
-					if(d.playerSpriteNumber == 1)
-					{
-						spriteRenderer.sprite = blue;
-						animator.runtimeAnimatorController = blueControl;
-					}
-					else if(d.playerSpriteNumber == 2)
-					{
-						spriteRenderer.sprite = green;
-						animator.runtimeAnimatorController = greenControl;
-					}
-					else if(d.playerSpriteNumber == 3)
-					{
-						spriteRenderer.sprite = yellow;
-						animator.runtimeAnimatorController = yellowControl;
-					}
-					else if(d.playerSpriteNumber == 4)
-					{
-						spriteRenderer.sprite = red;
-						animator.runtimeAnimatorController = redControl;
-					}
-				}
-			}
+//			if (this.gameObject.name == "Player1") 
+//			{
+//				GameObject g = GameObject.Find("Player1Data");
+//				
+//				if(g != null)
+//				{
+//					
+//					DataScript d = g.GetComponent<DataScript>();
+//					
+//					if(d.playerSpriteNumber == 1)
+//					{
+//						spriteRenderer.sprite = blue;
+//						animator.runtimeAnimatorController = blueControl;
+//
+//						
+//					}
+//					else if(d.playerSpriteNumber == 2)
+//					{
+//						spriteRenderer.sprite = green;
+//						animator.runtimeAnimatorController = greenControl;
+//						
+//					}
+//					else if(d.playerSpriteNumber == 3)
+//					{
+//						spriteRenderer.sprite = yellow;
+//						animator.runtimeAnimatorController = yellowControl;
+//					}
+//					else if(d.playerSpriteNumber == 4)
+//					{
+//						spriteRenderer.sprite = red;
+//						animator.runtimeAnimatorController = redControl;
+//					}
+//				}
+//			}
+//			
+//			else if (this.gameObject.name == "Player2") 
+//			{
+//				GameObject g = GameObject.Find("Player2Data");
+//				
+//				if(g != null)
+//				{
+//					DataScript d = g.GetComponent<DataScript>();
+//					
+//					if(d.playerSpriteNumber == 1)
+//					{
+//						spriteRenderer.sprite = blue;
+//						animator.runtimeAnimatorController = blueControl;
+//					}
+//					else if(d.playerSpriteNumber == 2)
+//					{
+//						spriteRenderer.sprite = green;
+//						animator.runtimeAnimatorController = greenControl;
+//					}
+//					else if(d.playerSpriteNumber == 3)
+//					{
+//						spriteRenderer.sprite = yellow;
+//						animator.runtimeAnimatorController = yellowControl;
+//					}
+//					else if(d.playerSpriteNumber == 4)
+//					{
+//						spriteRenderer.sprite = red;
+//						animator.runtimeAnimatorController = redControl;
+//					}
+//				}
+//			}
+//			
+//			else if (this.gameObject.name == "Player3") 
+//			{
+//				GameObject g = GameObject.Find("Player3Data");
+//				
+//				if(g != null)
+//				{
+//					DataScript d = g.GetComponent<DataScript>();
+//					
+//					if(d.playerSpriteNumber == 1)
+//					{
+//						spriteRenderer.sprite = blue;
+//						animator.runtimeAnimatorController = blueControl;
+//					}
+//					else if(d.playerSpriteNumber == 2)
+//					{
+//						spriteRenderer.sprite = green;
+//						animator.runtimeAnimatorController = greenControl;
+//					}
+//					else if(d.playerSpriteNumber == 3)
+//					{
+//						spriteRenderer.sprite = yellow;
+//						animator.runtimeAnimatorController = yellowControl;
+//					}
+//					else if(d.playerSpriteNumber == 4)
+//					{
+//						spriteRenderer.sprite = red;
+//						animator.runtimeAnimatorController = redControl;
+//					}
+//				}
+//			}
+//			
+//			else if (this.gameObject.name == "Player4") 
+//			{
+//				GameObject g = GameObject.Find("Player4Data");
+//				
+//				if(g != null)
+//				{
+//					DataScript d = g.GetComponent<DataScript>();
+//					
+//					if(d.playerSpriteNumber == 1)
+//					{
+//						spriteRenderer.sprite = blue;
+//						animator.runtimeAnimatorController = blueControl;
+//					}
+//					else if(d.playerSpriteNumber == 2)
+//					{
+//						spriteRenderer.sprite = green;
+//						animator.runtimeAnimatorController = greenControl;
+//					}
+//					else if(d.playerSpriteNumber == 3)
+//					{
+//						spriteRenderer.sprite = yellow;
+//						animator.runtimeAnimatorController = yellowControl;
+//					}
+//					else if(d.playerSpriteNumber == 4)
+//					{
+//						spriteRenderer.sprite = red;
+//						animator.runtimeAnimatorController = redControl;
+//					}
+//				}
+//			}
 		}
 
 		if (windPowerReady) {
