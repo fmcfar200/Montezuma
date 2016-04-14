@@ -69,6 +69,7 @@ public class PlayerAttackScript : MonoBehaviour {
 		animator.SetBool ("Moving", false);
 		animator.SetBool("Climbing", false);
 		animator.SetBool("Dictator", false);
+		animator.SetBool("Dead", false);
 		audioSource = GetComponent<AudioSource> ();
 		attackTrigger.enabled = false;
 

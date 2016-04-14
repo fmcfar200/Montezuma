@@ -1,7 +1,15 @@
 fileFormatVersion: 2
 guid: 6ba8a58f5c35fe943bfa8d0f2ed70e83
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: blue_death_0
+    21300002: blue_death_1
+    21300004: blue_death_2
+    21300006: blue_death_3
+    21300008: blue_death_6
+    21300010: blue_death_7
+    21300012: blue_death_8
+    21300014: blue_death_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -25,13 +33,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -42,6 +50,86 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: blue_death_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 9
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_death_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 10
+        width: 35
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_death_2
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 10
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_death_3
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 8
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_death_6
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 7
+        width: 68
+        height: 56
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_death_7
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 7
+        width: 67
+        height: 56
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_death_8
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 7
+        width: 68
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_death_9
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 7
+        width: 69
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
