@@ -27,6 +27,9 @@ public class PlayerHealthScript : MonoBehaviour {
 		if (topPlatform == null) {
 			Debug.LogError("NO TOP PLATFORM FOUND!!");
 		}
+
+		animator.SetBool ("Dead", false);
+		animator.SetBool ("Dictator", false);
 	}
 	
 	// Update is called once per frame

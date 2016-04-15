@@ -54,12 +54,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		//logs if the player is on the ground
-		if (grounded == true) 
-		{
-			//Debug.Log(this.gameObject.name + ": On the ground");
-		}
-
+	
 		//sets the jump variable to true if the jump button is pressed and the player is on the ground.
 		if (Input.GetButtonDown (jumpString) && (grounded)) 
 		{
@@ -92,6 +87,10 @@ public class PlayerMovementScript : MonoBehaviour {
 		} else if (moveHor == 0) {
 			animator.SetBool("Moving",false);
 			GetComponent<Animator>().enabled = false;
+			if (GetComponent<PlayerAttackScript>().isDictator)
+			{
+				GetComponent<SpriteRenderer>().sprite = GetComponent<PlayerAttackScript>().dictatorSprite;
+			}
 
 		}
 
@@ -116,7 +115,7 @@ public class PlayerMovementScript : MonoBehaviour {
 			moveHor = 0;
 			float moveVer = Input.GetAxis(verticalString);
 			playerRb.velocity = new Vector2(playerRb.velocity.x,moveVer*playerSpeed);
-			if (moveVer == 1 || moveVer == -1)
+			if (moveVer < 1 || moveVer > -1)
 			{
 				animator.SetBool("Climbing",true);
 			}

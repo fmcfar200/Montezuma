@@ -28,6 +28,7 @@ public class PlayerAttackScript : MonoBehaviour {
 	public bool freezePowerReady = false;
 	public bool shieldPowerReady = false;
 	public bool speedPowerReady = false;
+	bool usingShield = false;
 	public GameObject freezeObj;
 	public GameObject runObj;
 	public GameObject shieldObj;
@@ -303,7 +304,7 @@ public class PlayerAttackScript : MonoBehaviour {
 				PlayerMovementScript hitMovement = hit.collider.gameObject.GetComponent<PlayerMovementScript>();
 				hitMovement.enabled = false;
 				hitRb2D.isKinematic = true;
-				hitRb2D.velocity = new Vector2((this.transform.localScale.x)*25f,0);
+				hitRb2D.velocity = new Vector2((this.transform.localScale.x)*15f,0);
 				yield return new WaitForSeconds (2.0f);
 				hitMovement.enabled = true;
 				hitRb2D.isKinematic = false;
@@ -353,6 +354,7 @@ public class PlayerAttackScript : MonoBehaviour {
 
 	IEnumerator ShieldPower()
 	{
+		usingShield = true;
 		audioSource.PlayOneShot (shieldSound);
 		PlayerHealthScript playerHealth = this.gameObject.GetComponent<PlayerHealthScript> ();
 		shieldObj.SetActive (true);
@@ -360,6 +362,7 @@ public class PlayerAttackScript : MonoBehaviour {
 		yield return new WaitForSeconds (5.0f);
 		shieldObj.SetActive (false);
 		playerHealth.enabled = true;
+		usingShield = false;
 	}
 
 	void PlayAttackSound()
@@ -376,9 +379,11 @@ public class PlayerAttackScript : MonoBehaviour {
 	{
 
 		if (coll.gameObject.tag == "Player") {
-			PlayAttackSound();
-			StartCoroutine(coll.gameObject.GetComponent<PlayerHealthScript>().WaitAndRespawnPlayer());
-
+			if (coll.GetComponent<PlayerAttackScript>().usingShield == false)
+			{
+				PlayAttackSound();
+				StartCoroutine(coll.gameObject.GetComponent<PlayerHealthScript>().WaitAndRespawnPlayer());
+			}
 		}
 	}
 }
