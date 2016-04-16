@@ -115,8 +115,10 @@ public class PlayerMovementScript : MonoBehaviour {
 			moveHor = 0;
 			float moveVer = Input.GetAxis(verticalString);
 			playerRb.velocity = new Vector2(playerRb.velocity.x,moveVer*playerSpeed);
-			if (moveVer < 1 || moveVer > -1)
+			if (moveVer <= 1 || moveVer >= -1)
 			{
+				animator.enabled = true;
+				animator.SetBool("Moving",false);
 				animator.SetBool("Climbing",true);
 			}
 			else

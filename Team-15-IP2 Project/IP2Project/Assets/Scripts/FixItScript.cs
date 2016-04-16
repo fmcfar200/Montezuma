@@ -6,7 +6,7 @@ public class FixItScript : MonoBehaviour {
 	IEnumerator WaitAndDestroy()
 	{
 
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForEndOfFrame();
 		gameObject.transform.position = Vector3.zero;
 		//Destroy (this.gameObject);
 	}

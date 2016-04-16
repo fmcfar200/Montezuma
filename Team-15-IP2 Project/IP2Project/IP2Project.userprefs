@@ -1,8 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character Scripts\PlayerAttackScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FixItScript.cs">
     <Files>
+      <File FileName="Assets\Scripts\FixItScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character Scripts\PlayerHealthScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character Scripts\PlayerAttackScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character Scripts\PlayerMovementScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
