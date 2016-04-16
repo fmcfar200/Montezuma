@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a79d8938e06900c478efc7eda089e940
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - spriteUI: {instanceID: 0}
+  - freeze: {fileID: 21300004, guid: dace9506eb0572a4386a78212b1b53d7, type: 3}
+  - wind: {fileID: 21300006, guid: dace9506eb0572a4386a78212b1b53d7, type: 3}
+  - shield: {fileID: 21300002, guid: dace9506eb0572a4386a78212b1b53d7, type: 3}
+  - speed: {fileID: 21300000, guid: dace9506eb0572a4386a78212b1b53d7, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PickUpUIScript.cs" />
      <Compile Include="Assets\Scripts\ChangeSpriteScript.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\Player1ScoreScript.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\Player2ScoreScript.cs" />
