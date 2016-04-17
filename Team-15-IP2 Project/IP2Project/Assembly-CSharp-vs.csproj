@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Character Scripts\PlayerMarkerScript.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\PlayerMovementScript.cs" />
      <Compile Include="Assets\Scripts\CharacterChangeScript.cs" />
+     <Compile Include="Assets\Scripts\CharacterMarkerScript.cs" />
      <Compile Include="Assets\Scripts\CharacterMenu.cs" />
      <Compile Include="Assets\Scripts\DataScript.cs" />
      <Compile Include="Assets\Scripts\EndGameScript.cs" />
