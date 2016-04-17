@@ -63,18 +63,147 @@ public class PlayerAttackScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		//initialisation
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		animator = GetComponent<Animator> ();
-		//animator.runtimeAnimatorController = normalCont;
 		animator.SetBool ("Moving", false);
-		animator.SetBool("Climbing", false);
-		animator.SetBool("Dictator", false);
-		animator.SetBool("Dead", false);
+		animator.SetBool ("Climbing", false);
+		animator.SetBool ("Dictator", false);
+		animator.SetBool ("Dead", false);
 		audioSource = GetComponent<AudioSource> ();
 		attackTrigger.enabled = false;
 
+		if (this.gameObject.name == "Player1") {
+			GameObject g = GameObject.Find ("Player1Data");
+			
+			if (g != null) {
+				
+				DataScript d = g.GetComponent<DataScript> ();
+
+				if (d.playerSpriteNumber == 1) {
+					normalSprite = blue;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dblue;
+					animator.runtimeAnimatorController = blueControl;
+					
+					
+				} else if (d.playerSpriteNumber == 2) {
+					normalSprite = green;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dgreen;
+					animator.runtimeAnimatorController = greenControl;
+					
+				} else if (d.playerSpriteNumber == 3) {
+					normalSprite = yellow;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dyellow;
+					animator.runtimeAnimatorController = yellowControl;
+				} else if (d.playerSpriteNumber == 4) {
+					normalSprite = red;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dred;
+					animator.runtimeAnimatorController = redControl;
+				}
+
+				animator.SetBool ("Moving", false);
+				animator.SetBool ("Climbing", false);
+				animator.SetBool ("Dictator", false);
+				animator.SetBool ("Dead", false);
+			}
+		} else if (this.gameObject.name == "Player2") {
+			GameObject g = GameObject.Find ("Player2Data");
+			
+			if (g != null) {
+				DataScript d = g.GetComponent<DataScript> ();
+
+				if (d.playerSpriteNumber == 1) {
+					normalSprite = blue;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dblue;
+					animator.runtimeAnimatorController = blueControl;
+				} else if (d.playerSpriteNumber == 2) {
+					normalSprite = green;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dgreen;
+					animator.runtimeAnimatorController = greenControl;
+				} else if (d.playerSpriteNumber == 3) {
+					normalSprite = yellow;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dyellow;
+					animator.runtimeAnimatorController = yellowControl;
+				} else if (d.playerSpriteNumber == 4) {
+					normalSprite = red;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dred;
+					animator.runtimeAnimatorController = redControl;
+				}
+
+				animator.SetBool ("Moving", false);
+				animator.SetBool ("Climbing", false);
+				animator.SetBool ("Dictator", false);
+				animator.SetBool ("Dead", false);
+			}
+		} else if (this.gameObject.name == "Player3") {
+			GameObject g = GameObject.Find ("Player3Data");
+			
+			if (g != null) {
+				DataScript d = g.GetComponent<DataScript> ();
+
+				if (d.playerSpriteNumber == 1) {
+					normalSprite = blue;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dblue;
+
+					animator.runtimeAnimatorController = blueControl;
+				} else if (d.playerSpriteNumber == 2) {
+					normalSprite = green;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dgreen;
+
+					animator.runtimeAnimatorController = greenControl;
+				} else if (d.playerSpriteNumber == 3) {
+					normalSprite = yellow;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dyellow;
+
+					animator.runtimeAnimatorController = yellowControl;
+				} else if (d.playerSpriteNumber == 4) {
+					normalSprite = red;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dred;
+
+					animator.runtimeAnimatorController = redControl;
+				}
+
+				animator.SetBool ("Moving", false);
+				animator.SetBool ("Climbing", false);
+				animator.SetBool ("Dictator", false);
+				animator.SetBool ("Dead", false);
+			}
+		} else if (this.gameObject.name == "Player4") {
+			GameObject g = GameObject.Find ("Player4Data");
+			
+			if (g != null) {
+				DataScript d = g.GetComponent<DataScript> ();
+				if (d.playerSpriteNumber == 1) {
+					normalSprite = blue;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dblue;
+
+					animator.runtimeAnimatorController = blueControl;
+				} else if (d.playerSpriteNumber == 2) {
+					normalSprite = green;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dgreen;
+
+					animator.runtimeAnimatorController = greenControl;
+				} else if (d.playerSpriteNumber == 3) {
+					normalSprite = yellow;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dyellow;
+
+					animator.runtimeAnimatorController = yellowControl;
+				} else if (d.playerSpriteNumber == 4) {
+					normalSprite = red;
+					dictatorSprite = GetComponent<ChangeSpriteScript>().Dred;
+
+					animator.runtimeAnimatorController = redControl;
+				}
+
+				animator.SetBool ("Moving", false);
+				animator.SetBool ("Climbing", false);
+				animator.SetBool ("Dictator", false);
+				animator.SetBool ("Dead", false);
+			}
+		}
+	
 	}
+
+
 	
 	// Update is called once per frame
 	void Update () 
@@ -105,163 +234,31 @@ public class PlayerAttackScript : MonoBehaviour {
 		// isDictator is set when the top platform script detects one person colliding with it.
 		if (isDictator) {
 
-			animator.SetBool("Dictator", true);
+			animator.SetBool ("Dictator", true);
 		
 
 
 
-			if (Input.GetButtonDown (specialString) && !usingSpecial) 
-			{
+			if (Input.GetButtonDown (specialString) && !usingSpecial) {
 				usingSpecial = true;
 				specialTimer = specialDelay;
-				Instantiate(spearPrefab,spearSpawn.transform.position,Quaternion.identity);
-				PlayFireballSound();
+				Instantiate (spearPrefab, spearSpawn.transform.position, Quaternion.identity);
+				PlayFireballSound ();
 			}
 
-			if (usingSpecial)
-			{
-				if(specialTimer > 0)
-				{
+			if (usingSpecial) {
+				if (specialTimer > 0) {
 					specialTimer -= Time.deltaTime;
-				}
-				else
-				{
+				} else {
 					usingSpecial = false;
 				}
 			}
-		} 
-		else 
-		{
-			this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSprite;
-			animator.SetBool("Dictator", false);
-			if (this.gameObject.name == "Player1") 
-			{
-				GameObject g = GameObject.Find("Player1Data");
-				
-				if(g != null)
-				{
-					
-					DataScript d = g.GetComponent<DataScript>();
-					
-					if(d.playerSpriteNumber == 1)
-					{
-						spriteRenderer.sprite = blue;
-						animator.runtimeAnimatorController = blueControl;
-
-						
-					}
-					else if(d.playerSpriteNumber == 2)
-					{
-						spriteRenderer.sprite = green;
-						animator.runtimeAnimatorController = greenControl;
-						
-					}
-					else if(d.playerSpriteNumber == 3)
-					{
-						spriteRenderer.sprite = yellow;
-						animator.runtimeAnimatorController = yellowControl;
-					}
-					else if(d.playerSpriteNumber == 4)
-					{
-						spriteRenderer.sprite = red;
-						animator.runtimeAnimatorController = redControl;
-					}
-				}
-			}
-			
-			else if (this.gameObject.name == "Player2") 
-			{
-				GameObject g = GameObject.Find("Player2Data");
-				
-				if(g != null)
-				{
-					DataScript d = g.GetComponent<DataScript>();
-					
-					if(d.playerSpriteNumber == 1)
-					{
-						spriteRenderer.sprite = blue;
-						animator.runtimeAnimatorController = blueControl;
-					}
-					else if(d.playerSpriteNumber == 2)
-					{
-						spriteRenderer.sprite = green;
-						animator.runtimeAnimatorController = greenControl;
-					}
-					else if(d.playerSpriteNumber == 3)
-					{
-						spriteRenderer.sprite = yellow;
-						animator.runtimeAnimatorController = yellowControl;
-					}
-					else if(d.playerSpriteNumber == 4)
-					{
-						spriteRenderer.sprite = red;
-						animator.runtimeAnimatorController = redControl;
-					}
-				}
-			}
-			
-			else if (this.gameObject.name == "Player3") 
-			{
-				GameObject g = GameObject.Find("Player3Data");
-				
-				if(g != null)
-				{
-					DataScript d = g.GetComponent<DataScript>();
-					
-					if(d.playerSpriteNumber == 1)
-					{
-						spriteRenderer.sprite = blue;
-						animator.runtimeAnimatorController = blueControl;
-					}
-					else if(d.playerSpriteNumber == 2)
-					{
-						spriteRenderer.sprite = green;
-						animator.runtimeAnimatorController = greenControl;
-					}
-					else if(d.playerSpriteNumber == 3)
-					{
-						spriteRenderer.sprite = yellow;
-						animator.runtimeAnimatorController = yellowControl;
-					}
-					else if(d.playerSpriteNumber == 4)
-					{
-						spriteRenderer.sprite = red;
-						animator.runtimeAnimatorController = redControl;
-					}
-				}
-			}
-			
-			else if (this.gameObject.name == "Player4") 
-			{
-				GameObject g = GameObject.Find("Player4Data");
-				
-				if(g != null)
-				{
-					DataScript d = g.GetComponent<DataScript>();
-					
-					if(d.playerSpriteNumber == 1)
-					{
-						spriteRenderer.sprite = blue;
-						animator.runtimeAnimatorController = blueControl;
-					}
-					else if(d.playerSpriteNumber == 2)
-					{
-						spriteRenderer.sprite = green;
-						animator.runtimeAnimatorController = greenControl;
-					}
-					else if(d.playerSpriteNumber == 3)
-					{
-						spriteRenderer.sprite = yellow;
-						animator.runtimeAnimatorController = yellowControl;
-					}
-					else if(d.playerSpriteNumber == 4)
-					{
-						spriteRenderer.sprite = red;
-						animator.runtimeAnimatorController = redControl;
-					}
-				}
-			}
+		} else {
+			this.gameObject.GetComponent<SpriteRenderer> ().sprite = normalSprite;
+			animator.SetBool ("Dictator", false);
 		}
+		
+			
 
 		if (windPowerReady) {
 			if (Input.GetButtonDown (powerString)) {
