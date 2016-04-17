@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PickUpUIScript.cs" />
      <Compile Include="Assets\Scripts\ChangeSpriteScript.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\Player1ScoreScript.cs" />
      <Compile Include="Assets\Scripts\Character Scripts\Player2ScoreScript.cs" />
@@ -66,7 +67,6 @@
      <Compile Include="Assets\Scripts\Main Menu\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\Main Menu\PlayerMenuScript.cs" />
      <Compile Include="Assets\Scripts\PauseGameScript.cs" />
-     <Compile Include="Assets\Scripts\PickUpUIScript.cs" />
      <Compile Include="Assets\Scripts\PickupScript.cs" />
      <Compile Include="Assets\Scripts\PickupSpawnScript.cs" />
      <Compile Include="Assets\Scripts\TimeLeftScript.cs" />

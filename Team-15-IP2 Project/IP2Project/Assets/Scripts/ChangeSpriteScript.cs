@@ -7,12 +7,6 @@ public class ChangeSpriteScript : MonoBehaviour {
 	public Sprite blue;
 	public Sprite green;
 	public Sprite yellow;
-
-	public Sprite Dred;
-	public Sprite Dblue;
-	public Sprite Dgreen;
-	public Sprite Dyellow;
-
 	
 	public RuntimeAnimatorController redControl;
 	public RuntimeAnimatorController greenControl;
