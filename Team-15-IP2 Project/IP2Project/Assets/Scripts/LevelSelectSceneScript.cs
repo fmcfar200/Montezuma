@@ -3,8 +3,18 @@ using System.Collections;
 
 public class LevelSelectSceneScript : MonoBehaviour {
 
+	IEnumerator WaitAndUnpause()
+	{
+		yield return new WaitForSeconds (10.0f);
+		Time.timeScale = 1;
+	}
+
 	// Use this for initialization
 	void Start () {
+
+		Time.timeScale = 0;
+		StartCoroutine (WaitAndUnpause());
+
 	
 	}
 	

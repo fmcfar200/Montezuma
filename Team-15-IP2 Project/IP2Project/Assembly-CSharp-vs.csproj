@@ -73,7 +73,6 @@
      <Compile Include="Assets\Scripts\TopPlatformScript.cs" />
      <Compile Include="Assets\Scripts\WinScript.cs" />
      <Compile Include="Assets\Scripts\WinnerSprite.cs" />
-     <Compile Include="Assets\Scripts\WinnerUIScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.8/Standalone/UnityEngine.UI.dll</HintPath>
  </Reference>

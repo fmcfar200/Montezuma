@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PickUpUIScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LevelSelectSceneScript.cs">
     <Files>
-      <File FileName="Assets\PickUpUIScript.cs" Line="23" Column="36" />
+      <File FileName="Assets\Scripts\LevelSelectSceneScript.cs" Line="17" Column="3" />
+      <File FileName="Assets\PickUpUIScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
