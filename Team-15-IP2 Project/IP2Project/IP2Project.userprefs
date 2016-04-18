@@ -1,10 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharacterMarkerScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\WGE\WGE CW Fraser McFarlane\Assets\Scripts\PauseScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\CharacterMarkerScript.cs" Line="118" Column="43" />
-      <File FileName="Assets\Scripts\LevelUIScript.cs" Line="20" Column="3" />
-      <File FileName="Assets\Scripts\ChangeSpriteScript.cs" Line="57" Column="4" />
+      <File FileName="..\..\..\..\WGE\WGE CW Fraser McFarlane\Assets\Scripts\PauseScript.cs" Line="52" Column="2" />
+      <File FileName="..\..\..\..\WGE\WGE CW Fraser McFarlane\Assets\Scripts\PlayerInventoryScript.cs" Line="19" Column="26" />
+      <File FileName="..\..\..\..\WGE\WGE CW Fraser McFarlane\Assets\Scripts\PlayerScript.cs" Line="113" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
