@@ -47,6 +47,9 @@ public class PlayerHealthScript : MonoBehaviour {
 		animator.SetBool ("Dead", true);
 		PlayRandomDeathSound ();
 		yield return new WaitForSeconds (0.6f);
+		animator.SetBool ("Dead", false);
+		animator.SetBool ("Moving", false);
+		animator.SetBool ("Dictator", false);
 		player.GetComponent<SpriteRenderer> ().color = new Color(1.0f,1.0f,1.0f,tempAlphaVal);
 		if (player.GetComponent<PlayerMovementScript> ().onTopPlat == true) {
 			topPlatform.GetComponent<TopPlatformScript> ().numOnTop -= 1;

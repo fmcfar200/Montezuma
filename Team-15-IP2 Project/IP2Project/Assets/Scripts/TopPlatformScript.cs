@@ -16,7 +16,7 @@ public class TopPlatformScript : MonoBehaviour {
 	void OnCollisionStay2D(Collision2D coll)
 	{
 		if (coll.gameObject.tag == "Player") {
-			if (numOnTop == 1)
+			if (numOnTop == 1 && coll.gameObject.GetComponent<PlayerAttackScript>().isDictator == false)
 			{
 				coll.gameObject.GetComponent<PlayerAttackScript>().isDictator = true;
 			}
