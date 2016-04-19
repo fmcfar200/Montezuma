@@ -12,6 +12,9 @@
     <Files>
       <File FileName="Assets\Scripts\LevelSelectSceneScript.cs" Line="17" Column="3" />
       <File FileName="Assets\PickUpUIScript.cs" Line="1" Column="1" />
+<<<<<<< HEAD
+>>>>>>> parent of 75c47f5... Post beta
+=======
 >>>>>>> parent of 75c47f5... Post beta
     </Files>
   </MonoDevelop.Ide.Workbench>
