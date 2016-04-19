@@ -29,22 +29,106 @@ public class EndGameScript : MonoBehaviour {
 			if (win.winningPlayer == 1)
 			{
 				winnerText.text = "Player 1 Wins!";
-				winnerSprite.sprite = yellow;
+
+				GameObject dataObject = GameObject.Find("Player1Data");
+				if(dataObject != null)
+				{
+					DataScript data = dataObject.GetComponent<DataScript>();
+					if(data.playerSpriteNumber == 1)
+					{
+						winnerSprite.sprite = blue;
+					}
+					if(data.playerSpriteNumber == 2)
+					{
+						winnerSprite.sprite = green;
+					}
+					if(data.playerSpriteNumber == 3)
+					{
+						winnerSprite.sprite = yellow;
+					}
+					if(data.playerSpriteNumber == 4)
+					{
+						winnerSprite.sprite = red;
+					}
+				}
 			}
 			else if(win.winningPlayer == 2)
 			{
 				winnerText.text = "Player 2 Wins!";
-				winnerSprite.sprite = red;
+
+				GameObject dataObject = GameObject.Find("Player2Data");
+				if(dataObject != null)
+				{
+					DataScript data = dataObject.GetComponent<DataScript>();
+					if(data.playerSpriteNumber == 1)
+					{
+						winnerSprite.sprite = blue;
+					}
+					if(data.playerSpriteNumber == 2)
+					{
+						winnerSprite.sprite = green;
+					}
+					if(data.playerSpriteNumber == 3)
+					{
+						winnerSprite.sprite = yellow;
+					}
+					if(data.playerSpriteNumber == 4)
+					{
+						winnerSprite.sprite = red;
+					}
+				}
 			}
 			else if(win.winningPlayer == 3)
 			{
 				winnerText.text = "Player 3 Wins!";
-				winnerSprite.sprite = green;
+
+				GameObject dataObject = GameObject.Find("Player3Data");
+				if(dataObject != null)
+				{
+					DataScript data = dataObject.GetComponent<DataScript>();
+					if(data.playerSpriteNumber == 1)
+					{
+						winnerSprite.sprite = blue;
+					}
+					if(data.playerSpriteNumber == 2)
+					{
+						winnerSprite.sprite = green;
+					}
+					if(data.playerSpriteNumber == 3)
+					{
+						winnerSprite.sprite = yellow;
+					}
+					if(data.playerSpriteNumber == 4)
+					{
+						winnerSprite.sprite = red;
+					}
+				}
 			}
 			else if(win.winningPlayer == 4)
 			{
 				winnerText.text = "Player 4 Wins!";
-				winnerSprite.sprite = blue;
+
+				GameObject dataObject = GameObject.Find("Player4Data");
+				if(dataObject != null)
+				{
+					DataScript data = dataObject.GetComponent<DataScript>();
+					if(data.playerSpriteNumber == 1)
+					{
+						winnerSprite.sprite = blue;
+					}
+					if(data.playerSpriteNumber == 2)
+					{
+						winnerSprite.sprite = green;
+					}
+					if(data.playerSpriteNumber == 3)
+					{
+						winnerSprite.sprite = yellow;
+					}
+					if(data.playerSpriteNumber == 4)
+					{
+						winnerSprite.sprite = red;
+					}
+				}
 			}
 			else if(win.winningPlayer == 5)
 			{
