@@ -1,14 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PauseGameScript.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DataScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character Scripts\PlayerAttackScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PauseGameScript.cs" Line="15" Column="3" />
-      <File FileName="Assets\Scripts\TopPlatformScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character Scripts\PlayerHealthScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character Scripts\PlayerMovementScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelSelectSceneScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CharacterMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DataScript.cs" Line="25" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

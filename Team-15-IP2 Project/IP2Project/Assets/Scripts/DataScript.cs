@@ -7,6 +7,23 @@ public class DataScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		if(this.gameObject.name == "Player1Data")
+		{
+			playerSpriteNumber = 3;
+		}
+		if(this.gameObject.name == "Player2Data")
+		{
+			playerSpriteNumber = 4;
+		}
+		if(this.gameObject.name == "Player3Data")
+		{
+			playerSpriteNumber = 1;
+		}
+		if(this.gameObject.name == "Player4Data")
+		{
+			playerSpriteNumber = 2;
+		}
 	
 	}
 	
