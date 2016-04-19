@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -74,6 +74,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		                              1 << LayerMask.NameToLayer("Ground"));
 		onTopPlat = Physics2D.Linecast(transform.position,groundCheck.position,
 		                              1 << LayerMask.NameToLayer("Top Platform"));
+
 
 		//Moving the players horizontally.
 		moveHor = Input.GetAxis(horizontalString);

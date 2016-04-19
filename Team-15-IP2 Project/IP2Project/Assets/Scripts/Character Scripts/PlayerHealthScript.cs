@@ -41,6 +41,8 @@ public class PlayerHealthScript : MonoBehaviour {
 	{
 		player.GetComponent<PlayerMovementScript> ().enabled = false;
 		player.GetComponent<PlayerAttackScript> ().enabled = false;
+		player.GetComponent<PlayerAttackScript> ().attackTrigger.enabled = false;
+		player.GetComponent<PlayerAttackScript> ().spearMelee.SetActive (false);
 		player.GetComponent<BoxCollider2D> ().enabled = false;
 		player.GetComponent<Rigidbody2D> ().isKinematic = true;
 		animator.enabled = true;
@@ -50,6 +52,7 @@ public class PlayerHealthScript : MonoBehaviour {
 		animator.SetBool ("Dead", false);
 		animator.SetBool ("Moving", false);
 		animator.SetBool ("Dictator", false);
+		animator.SetBool ("Climbing", false);
 		player.GetComponent<SpriteRenderer> ().color = new Color(1.0f,1.0f,1.0f,tempAlphaVal);
 		if (player.GetComponent<PlayerMovementScript> ().onTopPlat == true) {
 			topPlatform.GetComponent<TopPlatformScript> ().numOnTop -= 1;

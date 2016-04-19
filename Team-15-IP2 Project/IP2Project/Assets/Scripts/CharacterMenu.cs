@@ -39,7 +39,9 @@ public class CharacterMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetButtonDown ("Start")) {
+			LoadLevelSelect();
+		}
 	}
 
 	public void LoadLevelSelect()

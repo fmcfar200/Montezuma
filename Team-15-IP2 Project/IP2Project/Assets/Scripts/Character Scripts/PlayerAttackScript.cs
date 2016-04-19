@@ -11,7 +11,7 @@ public class PlayerAttackScript : MonoBehaviour {
 	private bool attacking = false;
 
 	private float attackTimer = 0;
-	private float attackDelay = 0.5f;
+	private float attackDelay = 1.0f;
 
 	public bool isDictator = false;
 
@@ -64,10 +64,13 @@ public class PlayerAttackScript : MonoBehaviour {
 
 	private SpriteRenderer spriteRenderer;
 
+	public GameObject spearMelee;
+
 	// Use this for initialization
 	void Start () 
 	{
 		//initialisation
+		spearMelee.SetActive (false);
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		animator = GetComponent<Animator> ();
 		//animator.runtimeAnimatorController = normalCont;
@@ -221,6 +224,7 @@ public class PlayerAttackScript : MonoBehaviour {
 			attacking = true;
 			attackTimer = attackDelay;
 			attackTrigger.enabled = true;
+			spearMelee.SetActive(true);
 		}
 
 		if (attacking) 
@@ -233,6 +237,8 @@ public class PlayerAttackScript : MonoBehaviour {
 			{
 				attacking = false;
 				attackTrigger.enabled = false;
+				spearMelee.SetActive(false);
+
 			}
 		}
 
@@ -389,6 +395,16 @@ public class PlayerAttackScript : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D coll)
 	{
 
+		if (coll.gameObject.tag == "Player") {
+			if (coll.GetComponent<PlayerAttackScript>().usingShield == false)
+			{
+				PlayAttackSound();
+				StartCoroutine(coll.gameObject.GetComponent<PlayerHealthScript>().WaitAndRespawnPlayer());
+			}
+		}
+	}
+	void OnTriggerEnter2D(Collider2D coll)
+	{
 		if (coll.gameObject.tag == "Player") {
 			if (coll.GetComponent<PlayerAttackScript>().usingShield == false)
 			{

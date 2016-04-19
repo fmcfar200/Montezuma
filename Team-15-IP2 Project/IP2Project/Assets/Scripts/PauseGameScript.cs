@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PauseGameScript : MonoBehaviour {
 
@@ -9,8 +10,8 @@ public class PauseGameScript : MonoBehaviour {
 
 	void Start()
 	{
-		pauseScreen.SetActive (false);
-		gamePaused = false;
+		pauseScreen.SetActive (true);
+		gamePaused = true;
 	}
 	void Update () {
 
