@@ -51,9 +51,7 @@ public class PlayerHealthScript : MonoBehaviour {
 		if (player.GetComponent<PlayerMovementScript> ().onTopPlat == true) {
 			topPlatform.GetComponent<TopPlatformScript> ().numOnTop -= 1;
 		}
-		animator.SetBool ("Dead", false);
-		animator.SetBool ("Moving", false);
-		animator.SetBool ("Dictator", false);
+
 		player.GetComponent<PlayerAttackScript> ().isDictator = false;
 		this.transform.position = playerSpawn.position;
 		yield return new WaitForSeconds (respawnTimer);
@@ -63,7 +61,9 @@ public class PlayerHealthScript : MonoBehaviour {
 		player.GetComponent<Rigidbody2D> ().isKinematic = false;
 		player.GetComponent<PlayerAttackScript> ().isDictator = false;
 		player.GetComponent<PlayerMovementScript> ().onLadder = false;
-
+		animator.SetBool ("Dead", false);
+		animator.SetBool ("Moving", false);
+		animator.SetBool ("Dictator", false);
 		player.GetComponent<SpriteRenderer> ().color = new Color(1.0f,1.0f,1.0f,normAlphaVal);
 
 
