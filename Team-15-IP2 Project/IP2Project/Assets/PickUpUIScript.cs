@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PickUpUIScript : MonoBehaviour {
 
 
-	public Image spriteUI;
+	public GameObject spriteUI;
 	public Sprite freeze;
 	public Sprite wind;
 	public Sprite shield;
@@ -25,16 +25,16 @@ public class PickUpUIScript : MonoBehaviour {
 	{
 		if (playerAttackScript.freezePowerReady == true) {
 			spriteUI.gameObject.SetActive (true);
-			spriteUI.sprite = freeze;
+			spriteUI.GetComponent<SpriteRenderer>().sprite = freeze;
 		} else if (playerAttackScript.windPowerReady == true) {
 			spriteUI.gameObject.SetActive (true);
-			spriteUI.sprite = wind;
+			spriteUI.GetComponent<SpriteRenderer>().sprite = wind;
 		} else if (playerAttackScript.shieldPowerReady == true) {
 			spriteUI.gameObject.SetActive (true);
-			spriteUI.sprite = shield;
+			spriteUI.GetComponent<SpriteRenderer>().sprite = shield;
 		} else if (playerAttackScript.speedPowerReady == true) {
 			spriteUI.gameObject.SetActive (true);
-			spriteUI.sprite = speed;
+			spriteUI.GetComponent<SpriteRenderer>().sprite = speed;
 		} else {
 			spriteUI.gameObject.SetActive (false);
 		}

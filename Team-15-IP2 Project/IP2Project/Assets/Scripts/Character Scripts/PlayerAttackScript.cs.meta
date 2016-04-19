@@ -2,7 +2,37 @@ fileFormatVersion: 2
 guid: 9fd2b2ad93eeb3c40bead555208cb8b2
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - attackTrigger: {instanceID: 0}
+  - spearPrefab: {instanceID: 0}
+  - spearSpawn: {instanceID: 0}
+  - dictatorSprite: {instanceID: 0}
+  - normalSprite: {instanceID: 0}
+  - freezeObj: {instanceID: 0}
+  - runObj: {instanceID: 0}
+  - shieldObj: {instanceID: 0}
+  - powerSpawn: {instanceID: 0}
+  - normalCont: {instanceID: 0}
+  - pickUpSound: {instanceID: 0}
+  - attackSound: {instanceID: 0}
+  - fireballSound: {instanceID: 0}
+  - iceHitSound: {instanceID: 0}
+  - iceBreakSound: {instanceID: 0}
+  - windSound: {instanceID: 0}
+  - shieldSound: {instanceID: 0}
+  - speedSound: {instanceID: 0}
+  - yellow: {instanceID: 0}
+  - red: {instanceID: 0}
+  - blue: {instanceID: 0}
+  - green: {instanceID: 0}
+  - Dyellow: {fileID: 21300014, guid: 5b960e05712cbf641b9b2317abeee265, type: 3}
+  - Dred: {fileID: 21300010, guid: 5b960e05712cbf641b9b2317abeee265, type: 3}
+  - Dblue: {fileID: 21300002, guid: 5b960e05712cbf641b9b2317abeee265, type: 3}
+  - Dgreen: {fileID: 21300006, guid: 5b960e05712cbf641b9b2317abeee265, type: 3}
+  - redControl: {instanceID: 0}
+  - greenControl: {instanceID: 0}
+  - blueControl: {instanceID: 0}
+  - yellowControl: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

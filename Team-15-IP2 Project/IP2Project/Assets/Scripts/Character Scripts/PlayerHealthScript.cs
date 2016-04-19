@@ -80,8 +80,10 @@ public class PlayerHealthScript : MonoBehaviour {
 		if (coll.gameObject.tag == "OOB") {
 			StartCoroutine (WaitAndRespawnPlayer ());
 		} else if (coll.gameObject.tag == "Special") {
-			Destroy(coll.gameObject);
-			StartCoroutine(WaitAndRespawnPlayer());
+			Destroy (coll.gameObject);
+			if (this.gameObject.GetComponent<PlayerAttackScript> ().usingShield == false) {
+				StartCoroutine (WaitAndRespawnPlayer ());
+			}
 		}
 
 	}

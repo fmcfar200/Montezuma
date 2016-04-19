@@ -11,11 +11,12 @@ public class EndGameScript : MonoBehaviour {
 	public Sprite red;
 	public Sprite blue;
 	public Sprite green;
-	
+	GameObject eventSys;
 
 	// Use this for initialization
 	void Start () {
-	
+		eventSys = GameObject.Find("EventSystem");
+		StartCoroutine (wait ());
 	}
 	
 	// Update is called once per frame
@@ -56,7 +57,12 @@ public class EndGameScript : MonoBehaviour {
 		//	LoadMainLevel();
 		//}
 	}
-
+	IEnumerator wait()
+	{
+		eventSys.SetActive (false);
+		yield return new WaitForSeconds (1.5f);
+		eventSys.SetActive (true);
+	}
 	public void LoadMainLevel()
 	{
 		Application.LoadLevel ("LevelSelectScene");

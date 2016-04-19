@@ -3,24 +3,31 @@ using System.Collections;
 
 public class LevelSelectSceneScript : MonoBehaviour {
 
-	IEnumerator WaitAndUnpause()
-	{
-		yield return new WaitForSeconds (10.0f);
-		Time.timeScale = 1;
-	}
+	GameObject eventSys;
+//	IEnumerator WaitAndUnpause()
+//	{
+//		yield return new WaitForSeconds (10.0f);
+//		Time.timeScale = 1;
+//	}
 
 	// Use this for initialization
 	void Start () {
-
-		Time.timeScale = 0;
-		StartCoroutine (WaitAndUnpause());
-
+		eventSys = GameObject.Find("EventSystem");
+//		Time.timeScale = 0;
+//		StartCoroutine (WaitAndUnpause());
+		StartCoroutine (wait ());
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+	IEnumerator wait()
+	{
+		eventSys.SetActive (false);
+		yield return new WaitForSeconds (1.25f);
+		eventSys.SetActive (true);
 	}
 
 	public void LoadLevelOne()

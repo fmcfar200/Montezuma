@@ -1,21 +1,13 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\WGE\WGE CW Fraser McFarlane\Assets\Scripts\PauseScript.cs">
-    <Files>
-      <File FileName="..\..\..\..\WGE\WGE CW Fraser McFarlane\Assets\Scripts\PauseScript.cs" Line="52" Column="2" />
-      <File FileName="..\..\..\..\WGE\WGE CW Fraser McFarlane\Assets\Scripts\PlayerInventoryScript.cs" Line="19" Column="26" />
-      <File FileName="..\..\..\..\WGE\WGE CW Fraser McFarlane\Assets\Scripts\PlayerScript.cs" Line="113" Column="33" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LevelSelectSceneScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character Scripts\PlayerAttackScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\LevelSelectSceneScript.cs" Line="17" Column="3" />
-      <File FileName="Assets\PickUpUIScript.cs" Line="1" Column="1" />
-<<<<<<< HEAD
->>>>>>> parent of 75c47f5... Post beta
-=======
->>>>>>> parent of 75c47f5... Post beta
+      <File FileName="Assets\Scripts\Character Scripts\PlayerAttackScript.cs" Line="349" Column="11" />
+      <File FileName="Assets\Scripts\Character Scripts\PlayerHealthScript.cs" Line="77" Column="2" />
+      <File FileName="Assets\PickUpUIScript.cs" Line="26" Column="53" />
+      <File FileName="Assets\Scripts\FireballScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EndGameScript.cs" Line="18" Column="45" />
+      <File FileName="Assets\Scripts\LevelSelectSceneScript.cs" Line="19" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
